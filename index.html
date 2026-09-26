@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | Phan Như Chí Trung</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+:root{
+
+    --blue:#2563eb;
+    --sky:#0ea5e9;
+    --light:#eff6ff;
+    --dark:#0f172a;
+    --gray:#64748b;
+
+}
+
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f8fafc;
+
+    color:var(--dark);
+
+}
+
+
+
+/* NAV */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    height:75px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 8%;
+
+    background:white;
+
+    box-shadow:0 5px 20px #0001;
+
+    z-index:10;
+
+}
+
+
+
+.logo{
+
+    font-size:22px;
+
+    font-weight:800;
+
+    color:var(--blue);
+
+}
+
+
+
+.navbar a{
+
+    text-decoration:none;
+
+    color:#334155;
+
+    margin-left:25px;
+
+}
+
+
+
+.navbar a:hover{
+
+    color:var(--blue);
+
+}
+
+
+
+/* MAIN */
+
+
+.container{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:130px 30px;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+    display:grid;
+
+    grid-template-columns:250px 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+
+}
+
+
+
+.avatar{
+
+    width:230px;
+
+    height:230px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--sky)
+    );
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    color:white;
+
+    font-size:80px;
+
+    font-weight:900;
+
+
+    box-shadow:0 20px 40px #2563eb55;
+
+
+}
+
+
+
+.hero h1{
+
+    font-size:70px;
+
+    letter-spacing:-4px;
+
+}
+
+
+
+.hero h1 span{
+
+    color:var(--blue);
+
+}
+
+
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+
+
+.description{
+
+    margin-top:25px;
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+/* BUTTON */
+
+
+.buttons{
+
+    margin-top:35px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:13px 25px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    margin-right:10px;
+
+}
+
+
+
+.primary{
+
+    background:var(--blue);
+
+    color:white;
+
+}
+
+
+
+.secondary{
+
+    border:1px solid #cbd5e1;
+
+    color:var(--dark);
+
+}
+
+
+
+
+
+/* CARD */
+
+
+.section{
+
+    margin-top:100px;
+
+}
+
+
+
+.title{
+
+    font-size:38px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.grid{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    border:1px solid #e2e8f0;
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px #0001;
+
+}
+
+
+
+.card h3{
+
+    color:var(--blue);
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* TIMELINE */
+
+
+.timeline{
+
+    border-left:3px solid var(--blue);
+
+    padding-left:30px;
+
+}
+
+
+
+.item{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.item h3{
+
+    color:var(--blue);
+
+}
+
+
+
+/* SKILL */
+
+
+.skill{
+
+    margin-bottom:20px;
+
+}
+
+
+.skill-name{
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+
+
+.bar{
+
+    height:10px;
+
+    background:#dbeafe;
+
+    border-radius:20px;
+
+    margin-top:10px;
+
+}
+
+
+
+.progress{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--blue),
+        var(--sky)
+    );
+
+    border-radius:20px;
+
+}
+
+
+
+/* TAG */
+
+
+.tags{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.tag{
+
+    padding:12px 20px;
+
+    background:var(--light);
+
+    color:var(--blue);
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    margin-top:80px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.hero{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.avatar{
+
+width:160px;
+
+height:160px;
+
+}
+
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+<div class="logo">
+Phan Như Chí Trung
+</div>
+
+
+<div>
+
+<a href="#about">
+Giới thiệu
+</a>
+
+<a href="#study">
+Học tập
+</a>
+
+<a href="#skill">
+Kỹ năng
+</a>
+
+</div>
+
+</nav>
+
+
+
+
+<main class="container">
+
+
+<section class="hero">
+
+
+<div class="avatar">
+
+T
+
+</div>
+
+
+
+<div>
+
+<h1>
+
+Xin chào,
+<br>
+
+mình là
+<span>
+Trung
+</span>
+
+</h1>
+
+
+<p class="subtitle">
+
+Sinh viên ngành Logistics - Đại học Giao thông vận tải TP.HCM
+
+</p>
+
+
+
+<p class="description">
+
+Mình đến từ Vũng Tàu và hiện đang học tập tại TP.HCM.
+Mình đang học thêm về công nghệ thông tin, giao lưu, học hỏi và cố gắng hơn mỗi ngày
+</p>
+
+
+
+<div class="buttons">
+
+<a class="btn primary" href="#">
+Liên hệ mình
+</a>
+
+
+<a class="btn secondary" href="#">
+Xem hành trình
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="section">
+
+<h2 class="title">
+Thông tin nhanh
+</h2>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+📍 Quê quán
+</h3>
+
+<p>
+Hà Tĩnh - Việt Nam
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🎓 Hiện tại
+</h3>
+
+<p>
+Sinh viên UTH
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+⚡ Chuyên ngành
+</h3>
+
+<p>
+Logistics và quản lý chuỗi cung ứng
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="study" class="section">
+
+
+<h2 class="title">
+Hành trình học tập
+</h2>
+
+
+
+<div class="timeline">
+
+
+<div class="item">
+
+<h3>
+THPT chuyên Lê Quý Đôn - Vũng Tàu
+</h3>
+
+<p>
+
+Rèn luyện tính tự giác,
+kỷ luật và nền tảng học tập.
+
+</p>
+
+</div>
+
+
+
+
+<div class="item">
+
+<h3>
+Đại học Giao thông vận tải TP.HCM
+</h3>
+
+<p>
+
+Theo học Logistics,
+tìm hiểu kỹ thuật và công nghệ.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="skill" class="section">
+
+
+<h2 class="title">
+Kỹ năng đang phát triển
+</h2>
+
+
+
+<div class="card">
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Nấu ăn
+</span>
+
+<span>
+30%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:30%">
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Quản lý thời gian
+</span>
+
+<span>
+60%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:60%">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Tiếng Anh
+</span>
+
+<span>
+35%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:35%">
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h2 class="title">
+Sở thích
+</h2>
+
+
+<div class="tags">
+
+
+<div class="tag">
+ ⚽ đá bóng
+</div>
+
+
+<div class="tag">
+ 🎸 guitar
+</div>
+
+
+<div class="tag">
+🎧 Âm nhạc
+</div>
+
+
+<div class="tag">
+💻 Công nghệ
+</div>
+
+
+<div class="tag">
+📚 Tự học
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+<footer>
+
+© 2026 Phan Như Chí Trung | Personal Portfolio
+
+</footer>
+
+
+</body>
+</html>
