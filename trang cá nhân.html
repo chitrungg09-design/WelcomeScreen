@@ -1,1179 +1,3061 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎄 Merry Christmas</title>
+
+<style>
+
+/* ======================
+   RESET
+====================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #06142d;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* ======================
+   HEADER
+====================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
 
-    <!-- =========================
-         HTML - CẤU HÌNH WEBSITE
-    ========================== -->
+    background: rgba(3, 15, 35, .75);
+    backdrop-filter: blur(12px);
 
-    <meta charset="UTF-8">
+    z-index: 1000;
+}
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
 
-    <title>Liên hệ | Nguyễn Văn A</title>
+nav {
+    display: flex;
+    gap: 30px;
+}
 
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
 
-    <!-- =========================
-         CSS
-    ========================== -->
+nav a:hover {
+    color: #ff4057;
+}
 
-    <style>
 
-        /* =====================================
-           RESET CSS
-        ===================================== */
+/* ======================
+   HERO
+====================== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.hero {
+    min-height: 100vh;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        /* =====================================
-           BODY
-        ===================================== */
+    padding: 120px 10% 70px;
 
-        body {
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #174a79,
+            transparent 30%
+        ),
+        linear-gradient(
+            #06142d,
+            #092b4d
+        );
+}
 
-            font-family: Arial, sans-serif;
+.hero-content {
+    max-width: 600px;
+    z-index: 5;
+}
 
-            background: #f7f7f5;
+.small-title {
+    color: #9ccfff;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
 
-            color: #111;
+h1 {
+    font-size: clamp(80px, 10vw, 150px);
+    line-height: .8;
+}
 
-            padding: 40px;
+h1 span {
+    color: #ff4057;
+    text-shadow: 0 0 25px rgba(255,64,87,.7);
+}
 
-        }
+.description {
+    max-width: 500px;
+    margin: 35px 0;
+    color: #c8d8e8;
+    line-height: 1.8;
+}
 
+.button {
+    display: inline-block;
 
-        /* =====================================
-           CONTAINER
-        ===================================== */
+    padding: 14px 28px;
 
-        .container {
+    border-radius: 30px;
 
-            max-width: 1400px;
+    background: #ff4057;
 
-            margin: auto;
+    color: white;
+    text-decoration: none;
 
-        }
+    font-weight: bold;
 
+    box-shadow:
+        0 10px 30px rgba(255,64,87,.3);
 
-        /* =====================================
-           HEADER
-        ===================================== */
+    transition: .3s;
+}
 
-        .section-number {
+.button:hover {
+    transform: translateY(-5px);
+}
 
-            color: #8b94a5;
 
-            font-size: 13px;
+/* ======================
+   CHRISTMAS TREE
+====================== */
 
-            font-weight: bold;
+.tree-container {
+    position: relative;
 
-            letter-spacing: 2px;
+    width: 430px;
+    height: 500px;
 
-            margin-bottom: 15px;
+    animation: floating 4s ease-in-out infinite;
+}
 
-        }
+@keyframes floating {
 
+    0%,100% {
+        transform: translateY(0);
+    }
 
-        .header {
+    50% {
+        transform: translateY(-15px);
+    }
 
-            display: flex;
+}
 
-            justify-content: space-between;
+.star {
+    position: absolute;
 
-            align-items: center;
+    top: 20px;
+    left: 50%;
 
-            margin-bottom: 40px;
+    transform: translateX(-50%);
 
-        }
+    font-size: 70px;
 
+    color: #ffd43b;
 
-        .header h1 {
+    z-index: 20;
 
-            font-size: 48px;
+    animation: glow 1.5s infinite alternate;
+}
 
-            letter-spacing: -2px;
+@keyframes glow {
 
-            margin-bottom: 5px;
+    from {
+        text-shadow: 0 0 10px #ffd43b;
+    }
 
-        }
+    to {
+        text-shadow:
+            0 0 30px white,
+            0 0 60px #ffd43b;
+    }
 
+}
 
-        .header p {
+.tree {
+    position: absolute;
 
-            color: #9299a7;
+    left: 50%;
 
-            font-size: 17px;
+    transform: translateX(-50%);
 
-        }
+    width: 0;
+    height: 0;
 
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
 
-        /* =====================================
-           NÚT LƯU DANH BẠ
-        ===================================== */
+    border-bottom: 220px solid #087f5b;
 
-        .save-contact {
+    filter:
+        drop-shadow(0 10px 20px rgba(0,0,0,.4));
+}
 
-            text-decoration: none;
+.tree1 {
+    top: 90px;
+}
 
-            color: #111;
+.tree2 {
+    top: 180px;
 
-            background: white;
+    border-left-width: 180px;
+    border-right-width: 180px;
 
-            border: 1px solid #ddd;
+    border-bottom-width: 240px;
+}
 
-            padding: 16px 22px;
+.tree3 {
+    top: 280px;
 
-            border-radius: 18px;
+    border-left-width: 210px;
+    border-right-width: 210px;
 
-            font-weight: bold;
+    border-bottom-width: 260px;
+}
 
-            box-shadow:
-                0 3px 10px rgba(0,0,0,0.05);
+.trunk {
+    position: absolute;
 
-            transition: 0.3s;
+    bottom: -10px;
+    left: 50%;
 
-        }
+    transform: translateX(-50%);
 
+    width: 70px;
+    height: 100px;
 
-        .save-contact:hover {
+    background: #75452a;
+}
 
-            transform: translateY(-3px);
+.light {
+    position: absolute;
 
-            box-shadow:
-                0 10px 25px rgba(0,0,0,0.1);
+    color: #ffd43b;
 
-        }
+    font-size: 22px;
 
+    z-index: 30;
 
-        /* =====================================
-           3 CARD
-        ===================================== */
+    animation: blink 1s infinite alternate;
+}
 
-        .contact-grid {
+.light1 {
+    left: 35%;
+    top: 190px;
+}
 
-            display: grid;
+.light2 {
+    left: 62%;
+    top: 250px;
+}
 
-            grid-template-columns:
-                repeat(3, 1fr);
+.light3 {
+    left: 28%;
+    top: 310px;
+}
 
-            gap: 20px;
+.light4 {
+    left: 70%;
+    top: 350px;
+}
 
-        }
+.light5 {
+    left: 45%;
+    top: 400px;
+}
 
+.light6 {
+    left: 55%;
+    top: 145px;
+}
 
-        .contact-card {
+@keyframes blink {
 
-            background: white;
+    from {
+        opacity: .3;
+        transform: scale(.7);
+    }
 
-            border: 1px solid #dedede;
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+        text-shadow: 0 0 20px #ffd43b;
+    }
 
-            border-radius: 20px;
+}
 
-            padding: 25px;
 
-            min-height: 260px;
+/* ======================
+   GENERAL SECTION
+====================== */
 
-            transition: 0.3s;
+.section,
+.gift-section,
+.wish-section {
 
-        }
+    min-height: 80vh;
 
+    padding: 100px 10%;
 
-        .contact-card:hover {
+    display: flex;
 
-            transform: translateY(-5px);
+    flex-direction: column;
 
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.08);
+    align-items: center;
 
-        }
+    justify-content: center;
 
+    text-align: center;
+}
 
-        /* =====================================
-           CARD TOP
-        ===================================== */
+.section {
+    background: #071b38;
+}
 
-        .card-top {
+.subtitle {
+    color: #ff4057;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
 
-            display: flex;
+h2 {
+    font-size: clamp(45px, 6vw, 75px);
+    margin-bottom: 50px;
+}
 
-            justify-content: space-between;
 
-            align-items: center;
+/* ======================
+   COUNTDOWN
+====================== */
 
-            margin-bottom: 25px;
+.countdown {
+    display: flex;
 
-        }
+    gap: 20px;
 
+    flex-wrap: wrap;
 
-        .card-label {
+    justify-content: center;
+}
 
-            color: #999;
+.time-box {
 
-            font-size: 11px;
+    width: 140px;
+    height: 140px;
 
-            letter-spacing: 1px;
+    display: flex;
 
-        }
+    flex-direction: column;
 
+    align-items: center;
+    justify-content: center;
 
-        /* =====================================
-           ICON
-        ===================================== */
+    border-radius: 20px;
 
-        .icon {
+    background: rgba(255,255,255,.07);
 
-            width: 45px;
+    border: 1px solid rgba(255,255,255,.1);
 
-            height: 45px;
+    backdrop-filter: blur(10px);
+}
 
-            border-radius: 13px;
+.time-box span {
 
-            display: flex;
+    font-size: 45px;
 
-            align-items: center;
+    font-weight: bold;
 
-            justify-content: center;
+    color: #ff4057;
+}
 
-            font-size: 21px;
+.time-box small {
+    color: #b9c8d8;
+}
 
-        }
 
+/* ======================
+   GIFT
+====================== */
 
-        .phone-icon {
+.gift-section {
 
-            background: #e7efff;
+    background:
+        radial-gradient(
+            circle at center,
+            #183e62,
+            #06142d
+        );
+}
 
-            color: #1769ff;
+.gift {
 
-        }
+    position: relative;
 
+    width: 180px;
+    height: 180px;
 
-        .email-icon {
+    cursor: pointer;
 
-            background: #e2f7ee;
+    transition: .5s;
+}
 
-            color: #00a86b;
+.gift:hover {
+    transform: scale(1.08);
+}
 
-        }
+.gift-box {
 
+    position: absolute;
 
-        .social-icon {
+    bottom: 0;
 
-            background: linear-gradient(
-                135deg,
-                #ff315f,
-                #9c27ff
-            );
+    width: 180px;
+    height: 130px;
 
-            color: white;
+    background: #d62839;
 
-        }
+    border-radius: 5px;
+}
 
+.gift-lid {
 
-        /* =====================================
-           CARD CONTENT
-        ===================================== */
+    position: absolute;
 
-        .contact-card h2 {
+    top: 30px;
 
-            font-size: 21px;
+    left: -10px;
 
-            margin-bottom: 8px;
+    width: 200px;
+    height: 45px;
 
-        }
+    background: #ef3b4f;
 
+    border-radius: 8px;
 
-        .contact-card p {
+    z-index: 3;
+}
 
-            color: #9098a7;
+.ribbon {
 
-            font-size: 14px;
+    position: absolute;
 
-            line-height: 1.5;
+    left: 50%;
 
-            min-height: 45px;
+    transform: translateX(-50%);
 
-        }
+    width: 35px;
+    height: 100%;
 
+    background: #ffd43b;
+}
 
-        /* =====================================
-           BUTTON AREA
-        ===================================== */
+.gift-message {
 
-        .card-buttons {
+    position: absolute;
 
-            display: flex;
+    width: 320px;
 
-            gap: 10px;
+    left: 50%;
+    top: -130px;
 
-            margin-top: 25px;
+    transform:
+        translateX(-50%)
+        scale(0);
 
-            padding-top: 15px;
+    padding: 25px;
 
-            border-top: 1px solid #eee;
+    border-radius: 20px;
 
-        }
+    background: rgba(255,255,255,.1);
 
+    backdrop-filter: blur(15px);
 
-        /* =====================================
-           BUTTON
-        ===================================== */
+    border: 1px solid rgba(255,255,255,.2);
 
-        .button {
+    transition: .5s;
+}
 
-            flex: 1;
+.gift.open .gift-message {
 
-            min-height: 42px;
+    transform:
+        translateX(-50%)
+        scale(1);
+}
 
-            padding: 10px;
+.click-text {
 
-            border-radius: 12px;
+    margin-top: 30px;
 
-            border: 1px solid #ddd;
+    color: #9fb3c8;
+}
 
-            background: white;
 
-            color: #222;
+/* ======================
+   WISH
+====================== */
 
-            text-decoration: none;
+.wish-section {
 
-            display: flex;
+    background:
+        linear-gradient(
+            rgba(6,20,45,.8),
+            rgba(6,20,45,.9)
+        ),
+        radial-gradient(
+            circle,
+            #244e70,
+            #06142d
+        );
+}
 
-            align-items: center;
+.wish-card {
 
-            justify-content: center;
+    max-width: 750px;
 
-            font-size: 14px;
+    padding: 60px 40px;
 
-            font-weight: bold;
+    border-radius: 30px;
 
-            cursor: pointer;
+    background: rgba(255,255,255,.06);
 
-            transition: 0.2s;
+    border: 1px solid rgba(255,255,255,.1);
 
-        }
+    backdrop-filter: blur(15px);
 
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.3);
+}
 
-        .button:hover {
+.santa {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
 
-            transform: translateY(-2px);
+.wish-card h2 {
+    margin-bottom: 20px;
+}
 
-        }
+.wish-card p {
 
+    line-height: 2;
 
-        /* =====================================
-           NÚT ZALO
-        ===================================== */
+    color: #cbd8e5;
+}
 
-        .zalo {
+.snowman {
 
-            background: #1769ff;
+    font-size: 60px;
 
-            color: white;
+    margin-top: 25px;
+}
 
-            border-color: #1769ff;
 
-        }
+/* ======================
+   FOOTER
+====================== */
 
+footer {
 
-        /* =====================================
-           NÚT EMAIL
-        ===================================== */
+    text-align: center;
 
-        .dark {
+    padding: 60px 20px;
 
-            background: #111;
+    background: #030b1b;
+}
 
-            color: white;
+footer h3 {
+    font-size: 35px;
+}
 
-            border-color: #111;
+footer p {
+    color: #8395a7;
+    margin-top: 10px;
+}
 
-        }
+.copyright {
+    font-size: 12px;
+}
 
 
-        /* =====================================
-           INSTAGRAM
-        ===================================== */
+/* ======================
+   SNOW
+====================== */
 
-        .instagram {
+.snowflake {
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #ff315f,
-                    #9b2cff
-                );
+    position: fixed;
 
-            color: white;
+    top: -20px;
 
-            border: none;
+    color: white;
 
-        }
+    pointer-events: none;
 
+    z-index: 999;
 
-        /* =====================================
-           REACTION BOX
-        ===================================== */
+    animation:
+        snowfall linear forwards;
 
-        .reaction-box {
+    text-shadow:
+        0 0 5px white;
+}
 
-            background: white;
+@keyframes snowfall {
 
-            border: 1px solid #dedede;
+    to {
 
-            border-radius: 25px;
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
 
-            margin-top: 40px;
+}
 
-            padding: 35px 30px;
 
-        }
+/* ======================
+   RESPONSIVE
+====================== */
 
+@media (max-width: 850px) {
 
-        /* =====================================
-           REACTION HEADER
-        ===================================== */
+    header {
+        padding: 0 5%;
+    }
 
-        .reaction-header {
+    nav {
+        display: none;
+    }
 
-            display: flex;
+    .hero {
 
-            justify-content: space-between;
+        flex-direction: column;
 
-            align-items: center;
+        text-align: center;
 
-            margin-bottom: 25px;
+        padding-top: 130px;
+    }
 
-        }
+    .hero-content {
+        margin-bottom: 50px;
+    }
 
+    .tree-container {
+        transform: scale(.7);
+    }
 
-        .reaction-label {
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-            display: inline-block;
+}
 
-            color: #f39b00;
+@media (max-width: 500px) {
 
-            border: 1px solid #ffc94d;
+    .tree-container {
+        transform: scale(.55);
+    }
 
-            padding: 5px 10px;
+    .time-box {
+        width: 110px;
+        height: 110px;
+    }
 
-            border-radius: 6px;
+    .time-box span {
+        font-size: 35px;
+    }
 
-            font-size: 11px;
+}
 
-            letter-spacing: 1px;
-
-        }
-
-
-        .reaction-header h2 {
-
-            margin-top: 12px;
-
-            font-size: 22px;
-
-        }
-
-
-        .total {
-
-            color: #8b95a7;
-
-            font-size: 13px;
-
-        }
-
-
-        /* =====================================
-           REACTION BUTTONS
-        ===================================== */
-
-        .reactions {
-
-            display: flex;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        .reaction {
-
-            border: 1px solid #ddd;
-
-            background: white;
-
-            padding: 12px 18px;
-
-            border-radius: 30px;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-
-        }
-
-
-        .reaction:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 5px 15px rgba(0,0,0,0.08);
-
-        }
-
-
-        .reaction span {
-
-            background: #f1f1f5;
-
-            padding: 3px 7px;
-
-            border-radius: 6px;
-
-            margin-left: 5px;
-
-        }
-
-
-        /* =====================================
-           RESPONSIVE - ĐIỆN THOẠI
-        ===================================== */
-
-        @media (max-width: 850px) {
-
-            body {
-
-                padding: 20px;
-
-            }
-
-
-            .header {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 25px;
-
-            }
-
-
-            .header h1 {
-
-                font-size: 38px;
-
-            }
-
-
-            .contact-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .reaction-header {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                gap: 15px;
-
-            }
-
-        }
-
-    </style>
-
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =====================================
-         HTML - NỘI DUNG WEBSITE
-    ====================================== -->
+<!-- ======================
+     HEADER
+====================== -->
 
-    <main class="container">
+<header>
 
+    <div class="logo">
+        🎄 Christmas
+    </div>
 
-        <!-- ================================
-             HEADER
-        ================================= -->
+    <nav>
 
-        <div class="header">
+        <a href="#home">
+            Trang chủ
+        </a>
 
-            <div>
+        <a href="#countdown">
+            Đếm ngược
+        </a>
 
-                <div class="section-number">
+        <a href="#gift">
+            Quà tặng
+        </a>
 
-                    06 / LIÊN HỆ & KẾT BẠN
+        <a href="#wish">
+            Lời chúc
+        </a>
 
-                </div>
+    </nav>
 
-
-                <h1>
-
-                    Kết nối với mình nhé!
-
-                </h1>
-
-
-                <p>
-
-                    Dù là trao đổi về công việc,
-                    dự án hay đơn giản là kết bạn làm quen!
-
-                </p>
-
-            </div>
+</header>
 
 
-            <!--
-                Nút này có thể dẫn tới file
-                danh bạ .vcf của bạn
-            -->
+<!-- ======================
+     HERO
+====================== -->
 
-            <a
-                href="contact.vcf"
-                download
-                class="save-contact"
-            >
+<section id="home" class="hero">
 
-                ↓ &nbsp; Lưu danh bạ (.vcf)
+    <div class="hero-content">
 
-            </a>
+        <p class="small-title">
+            ✨ Khoảng khắc mong manh giữa ế và có bồ ✨
+        </p>
+
+        <h1>
+
+            Merry<br>
+
+            <span>
+                Christmas
+            </span>
+
+        </h1>
+
+        <p class="description">
+
+            Chúc cả lò Trung đội 1 một mùa Giáng Sinh thật ấm áp,
+            hạnh phúc và ế chứ tui là hng vui rồi nạ. 🎄
+
+        </p>
+
+        <a
+            href="#countdown"
+            class="button"
+        >
+            Khám phá mùa Noel 🎁
+        </a>
+
+    </div>
+
+
+    <!-- CÂY THÔNG -->
+
+    <div class="tree-container">
+
+        <div class="star">
+            ★
+        </div>
+
+        <div class="tree tree1"></div>
+
+        <div class="tree tree2"></div>
+
+        <div class="tree tree3"></div>
+
+        <div class="trunk"></div>
+
+
+        <div class="light light1">
+            ●
+        </div>
+
+        <div class="light light2">
+            ●
+        </div>
+
+        <div class="light light3">
+            ●
+        </div>
+
+        <div class="light light4">
+            ●
+        </div>
+
+        <div class="light light5">
+            ●
+        </div>
+
+        <div class="light light6">
+            ●
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     COUNTDOWN
+====================== -->
+
+<section
+    id="countdown"
+    class="section"
+>
+
+    <p class="subtitle">
+        🎅 COUNTDOWN
+    </p>
+
+    <h2>
+        Đếm ngược đến Giáng Sinh
+    </h2>
+
+
+    <div class="countdown">
+
+
+        <div class="time-box">
+
+            <span id="days">
+                00
+            </span>
+
+            <small>
+                Ngày
+            </small>
 
         </div>
 
 
+        <div class="time-box">
 
-        <!-- ================================
-             3 CARD LIÊN HỆ
-        ================================= -->
+            <span id="hours">
+                00
+            </span>
 
-        <div class="contact-grid">
+            <small>
+                Giờ
+            </small>
 
-
-            <!-- =================================
-                 CARD 1 - PHONE / ZALO
-            ================================== -->
-
-            <div class="contact-card">
+        </div>
 
 
-                <div class="card-top">
+        <div class="time-box">
 
-                    <div class="icon phone-icon">
+            <span id="minutes">
+                00
+            </span>
 
-                        ☎
+            <small>
+                Phút
+            </small>
 
-                    </div>
-
-
-                    <div class="card-label">
-
-                        HOTLINE / ZALO
-
-                    </div>
-
-                </div>
+        </div>
 
 
-                <h2>
+        <div class="time-box">
 
-                    0123456789
+            <span id="seconds">
+                00
+            </span>
 
-                </h2>
+            <small>
+                Giây
+            </small>
 
-
-                <p>
-
-                    Liên hệ nhanh qua điện thoại
-                    hoặc Zalo cá nhân.
-
-                </p>
+        </div>
 
 
-                <div class="card-buttons">
+    </div>
+
+</section>
 
 
-                    <!--
-                        href="tel:..."
-                        dùng để gọi điện
-                    -->
+<!-- ======================
+     GIFT
+====================== -->
 
-                    <a
-                        href="tel:0123456789"
-                        class="button"
-                    >
+<!-- =========================================================
+     CHRISTMAS 3D TREE + 59 GIFTS
+     BẢN ĐÃ SỬA HOÀN CHỈNH
+========================================================= -->
 
-                        Gọi trực tiếp
+<section id="gift" class="gift-section">
 
-                    </a>
+    <p class="subtitle">🎁 A LITTLE SURPRISE</p>
+
+    <h2>Những món quà dành cho bạn</h2>
+
+    <p class="tree-hint">
+        🎄 Cây thông đang xoay • Bấm vào từng hộp quà
+    </p>
 
 
-                    <!--
-                        href="https://zalo.me/..."
-                        mở Zalo
-                    -->
+    <!-- =====================================================
+         3D STAGE
+    ====================================================== -->
 
-                    <a
-                        href="https://zalo.me/0123456789"
-                        target="_blank"
-                        class="button zalo"
-                    >
+    <div class="tree-stage">
 
-                        Zalo Chat
+        <div class="tree-rotator" id="christmasTreeRotator">
 
-                    </a>
+            <!-- NGÔI SAO -->
 
-                </div>
-
+            <div class="tree-star">
+                ★
             </div>
 
 
+            <!-- =================================================
+                 CÂY THÔNG HÌNH NÓN
+            ================================================== -->
 
-            <!-- =================================
-                 CARD 2 - EMAIL
-            ================================== -->
+            <div class="tree-cone cone-bottom"></div>
 
-            <div class="contact-card">
+            <div class="tree-cone cone-middle"></div>
 
-
-                <div class="card-top">
-
-                    <div class="icon email-icon">
-
-                        ✉
-
-                    </div>
+            <div class="tree-cone cone-top"></div>
 
 
-                    <div class="card-label">
+            <!-- THÂN CÂY -->
 
-                        EMAIL
-
-                    </div>
-
-                </div>
+            <div class="tree-trunk"></div>
 
 
-                <h2>
+            <!-- =================================================
+                 59 HỘP QUÀ
+            ================================================== -->
 
-                    yourmail@gmail.com
+            <div
+                id="christmasGiftContainer"
+                class="christmas-gift-container"
+            ></div>
 
-                </h2>
+        </div>
 
+    </div>
 
-                <p>
-
-                    Hòm thư cho các đề xuất
-                    công việc, dự án.
-
-                </p>
-
-
-                <div class="card-buttons">
+</section>
 
 
-                    <!--
-                        Bấm vào sẽ chạy JavaScript
-                        để copy email
-                    -->
+
+<!-- =========================================================
+     CSS
+========================================================= -->
+
+<style>
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.gift-section {
+
+    position: relative;
+
+    min-height: 1050px;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+.gift-section .subtitle {
+
+    color: #d4af37;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.gift-section h2 {
+
+    color: white;
+
+    font-size: 44px;
+
+    margin: 0;
+
+}
+
+
+.tree-hint {
+
+    color: rgba(255,255,255,.7);
+
+    margin-top: 12px;
+
+    font-size: 15px;
+
+}
+
+
+
+/* =========================================================
+   3D STAGE
+========================================================= */
+
+.tree-stage {
+
+    width: 100%;
+
+    height: 850px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    perspective: 2200px;
+
+    overflow: visible;
+
+}
+
+
+
+/* =========================================================
+   CÂY + HỘP QUÀ XOAY CHUNG
+========================================================= */
+
+.tree-rotator {
+
+    position: relative;
+
+    width: 760px;
+
+    height: 780px;
+
+    transform-style: preserve-3d;
+
+    animation: christmasTreeSpin 42s linear infinite;
+
+    will-change: transform;
+
+}
+
+
+/* =========================================================
+   XOAY
+========================================================= */
+
+@keyframes christmasTreeSpin {
+
+    from {
+
+        transform: rotateY(0deg);
+
+    }
+
+    to {
+
+        transform: rotateY(360deg);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   NGÔI SAO
+========================================================= */
+
+.tree-star {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    transform:
+        translateX(-50%)
+        translateZ(30px);
+
+    z-index: 500;
+
+    color: #ffd700;
+
+    font-size: 85px;
+
+    text-shadow:
+        0 0 10px #ffd700,
+        0 0 25px #fff,
+        0 0 45px #ffd700;
+
+}
+
+
+
+/* =========================================================
+   CÂY THÔNG
+========================================================= */
+
+.tree-cone {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotateX(5deg);
+
+    transform-origin: center bottom;
+
+    transform-style: preserve-3d;
+
+    border-radius: 50% 50% 10% 10%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 30%,
+            #45c96c 0%,
+            #22934d 35%,
+            #126438 65%,
+            #06351e 100%
+        );
+
+}
+
+
+/* =========================================================
+   NÓN DƯỚI
+========================================================= */
+
+.cone-bottom {
+
+    top: 350px;
+
+    width: 720px;
+
+    height: 400px;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+
+}
+
+
+/* =========================================================
+   NÓN GIỮA
+========================================================= */
+
+.cone-middle {
+
+    top: 210px;
+
+    width: 590px;
+
+    height: 350px;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+
+}
+
+
+/* =========================================================
+   NÓN TRÊN
+========================================================= */
+
+.cone-top {
+
+    top: 80px;
+
+    width: 450px;
+
+    height: 300px;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+
+}
+
+
+
+/* =========================================================
+   HIỆU ỨNG CÂY
+========================================================= */
+
+.cone-bottom::after,
+.cone-middle::after,
+.cone-top::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            170deg,
+            transparent 0px,
+            transparent 35px,
+            rgba(0,0,0,.13) 36px,
+            rgba(0,0,0,.13) 40px
+        );
+
+}
+
+
+
+/* =========================================================
+   THÂN CÂY
+========================================================= */
+
+.tree-trunk {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 10px;
+
+    width: 115px;
+
+    height: 150px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3a190b,
+            #6d3518,
+            #9b5527,
+            #542610,
+            #301208
+        );
+
+    box-shadow:
+        inset 8px 0 10px rgba(255,255,255,.08),
+        inset -8px 0 10px rgba(0,0,0,.35);
+
+}
+
+
+
+/* =========================================================
+   CONTAINER 59 HỘP
+========================================================= */
+
+.christmas-gift-container {
+
+    position: absolute;
+
+    inset: 0;
+
+    transform-style: preserve-3d;
+
+    /*
+       QUAN TRỌNG:
+       Cho phép click vào hộp quà.
+    */
+
+    pointer-events: auto;
+
+    z-index: 300;
+
+}
+
+
+
+/* =========================================================
+   HỘP QUÀ
+========================================================= */
+
+.gift-item {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 86px;
+
+    height: 70px;
+
+    margin-left: -43px;
+
+    margin-top: -35px;
+
+    transform-style: preserve-3d;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+    z-index: 400;
+
+    transition:
+        filter .2s ease,
+        scale .2s ease;
+
+}
+
+
+
+/* =========================================================
+   THÂN HỘP
+========================================================= */
+
+.gift-box {
+
+    position: relative;
+
+    width: 86px;
+
+    height: 70px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef3340,
+            #b71925 55%,
+            #7e1018
+        );
+
+    border:
+        2px solid rgba(255,255,255,.45);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.5);
+
+    transform-style: preserve-3d;
+
+}
+
+
+
+/* =========================================================
+   DÂY DỌC
+========================================================= */
+
+.gift-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 11px;
+
+    height: 100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #e5a91a,
+            #ffe17b,
+            #d69b16
+        );
+
+}
+
+
+
+/* =========================================================
+   DÂY NGANG
+========================================================= */
+
+.gift-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 27px;
+
+    width: 100%;
+
+    height: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e5a91a,
+            #ffe17b,
+            #d69b16
+        );
+
+}
+
+
+
+/* =========================================================
+   NẮP HỘP
+========================================================= */
+
+.gift-lid {
+
+    position: absolute;
+
+    left: -5px;
+
+    top: -13px;
+
+    width: 96px;
+
+    height: 19px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5863,
+            #b91824
+        );
+
+    border:
+        2px solid rgba(255,255,255,.45);
+
+    z-index: 3;
+
+}
+
+
+
+/* =========================================================
+   NƠ
+========================================================= */
+
+.gift-bow {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -28px;
+
+    transform:
+        translateX(-50%);
+
+    width: 38px;
+
+    height: 20px;
+
+    z-index: 10;
+
+}
+
+
+.gift-bow::before,
+.gift-bow::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 2px;
+
+    width: 23px;
+
+    height: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd84d,
+            #d99d10
+        );
+
+    border-radius:
+        50% 50% 50% 10%;
+
+}
+
+
+.gift-bow::before {
+
+    left: -2px;
+
+    transform:
+        rotate(-25deg);
+
+}
+
+
+.gift-bow::after {
+
+    right: -2px;
+
+    transform:
+        rotate(25deg);
+
+}
+
+
+
+/* =========================================================
+   TÊN TRÊN HỘP
+========================================================= */
+
+.gift-name {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 42px;
+
+    transform:
+        translateX(-50%)
+        translateZ(8px);
+
+    width: 78px;
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    line-height: 11px;
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 3px #000;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+@media (hover:hover) {
+
+    .gift-item:hover {
+
+        filter:
+            brightness(1.35);
+
+        scale: 1.08;
+
+    }
+
+
+    .gift-item:hover .gift-box {
+
+        box-shadow:
+            0 0 15px #ffd700,
+            0 0 35px rgba(255,215,0,.6);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.gift-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.72);
+
+    backdrop-filter:
+        blur(6px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+}
+
+
+.gift-popup.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.gift-card {
+
+    position: relative;
+
+    width: min(520px, 92vw);
+
+    padding: 38px 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5ead8
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.65);
+
+    text-align: center;
+
+    transform:
+        scale(.75)
+        translateY(30px);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.gift-popup.show .gift-card {
+
+    transform:
+        scale(1)
+        translateY(0);
+
+}
+
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.gift-card .christmas-popup-icon {
+
+    font-size: 58px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+/* =========================================================
+   TÊN
+========================================================= */
+
+.gift-card h3 {
+
+    margin:
+        0 0 18px;
+
+    color: #b11226;
+
+    font-size: 25px;
+
+}
+
+
+
+/* =========================================================
+   LỜI CHÚC
+========================================================= */
+
+.gift-card p {
+
+    color: #333;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    margin:
+        0 auto;
+
+}
+
+
+
+/* =========================================================
+   NÚT ĐÓNG
+========================================================= */
+
+.gift-close {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(177,18,38,.1);
+
+    color: #b11226;
+
+    font-size: 27px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.gift-close:hover {
+
+    background:
+        #b11226;
+
+    color: white;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+    .gift-section {
+
+        min-height: 800px;
+
+    }
+
+
+    .gift-section h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .tree-stage {
+
+        height: 650px;
+
+        transform:
+            scale(.65);
+
+    }
+
+}
+
+
+@media(max-width:430px) {
+
+    .tree-stage {
+
+        transform:
+            scale(.52);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   GIẢM CHUYỂN ĐỘNG
+========================================================= */
+
+@media(prefers-reduced-motion: reduce) {
+
+    .tree-rotator {
+
+        animation: none;
+
+    }
+
+}
+
+</style>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+(() => {
+
+    "use strict";
+
+
+    /* =====================================================
+       CHỜ HTML SẴN SÀNG
+    ===================================================== */
+
+    function initChristmasTree() {
+
+
+        /* =================================================
+           59 BẠN
+        ================================================= */
+
+        const christmasPeople = [
+
+            "Nguyễn Đức Trí",
+            "Nguyễn Hữu Trí",
+            "Nguyễn Huỳnh Đức Trí",
+            "Nguyễn Minh Trí",
+            "Nguyễn Ngọc Trí",
+            "Phan Nguyễn Bảo Trí",
+            "Tống Vũ Thanh Trí",
+            "Trần Minh Trí",
+            "Trần Đỗ Trọng Trí",
+            "Trương Minh Trí",
+            "Phan Thanh Trị",
+
+            "Cao Minh Triết",
+            "Phan Tấn Minh Triết",
+
+            "Bùi Thanh Triệu",
+            "Lê Ngọc Triệu",
+
+            "Lê Thị Việt Trinh",
+            "Nguyễn Thị Thùy Trinh",
+            "Phan Phương Trinh",
+            "Quàng Thị Phương Trinh",
+            "Tiêu Thái Thảo Trinh",
+            "Trần Hoàng Phương Trinh",
+            "Trần Mỹ Duyên Trinh",
+            "Hứa Ngọc Trọng",
+
+            "Lê Minh Trọng",
+            "Nguyễn Đức Trọng",
+            "Nguyễn Minh Trọng",
+            "Nguyễn Viết Phú Trọng",
+            "Quách Thành Trọng",
+
+            "Đặng Hồng Trúc",
+            "Lê Võ Thu Trúc",
+            "Nguyễn Thị Phương Trúc",
+            "Nguyễn Thị Thanh Trúc",
+            "Phạm Bảo Trúc",
+            "Phạm Thanh Trúc",
+            "Phạm Thị Minh Trúc",
+            "Trần Kỳ Bảo Trúc",
+            "Trương Thanh Trúc",
+            "Huỳnh Ngọc Trúc",
+
+            "Đinh Thành Trung",
+            "Đoàn Quốc Trung",
+            "Lê Minh Trung",
+            "Nguyễn Đức Hiếu Trung",
+            "Nguyễn Hữu Trung",
+            "Nguyễn Nhật Trung",
+
+            "Nguyễn Quốc Trung A",
+            "Nguyễn Quốc Trung B",
+
+            "Nguyễn Thành Trung A",
+            "Nguyễn Thành Trung B",
+
+            "Nguyễn Thiên Trung",
+            "Phan Như Chí Trung",
+            "Trần Quốc Trung",
+            "Vũ Thành Trung",
+
+            "Đỗ Xuân Trường",
+            "Hồ Danh Bá Trường",
+            "Huỳnh Nhựt Trường",
+            "Lê Văn Trường",
+            "Nguyễn Trường",
+            "Nguyễn Thanh Trường",
+
+            "Trần Nguyễn Trọng Tính"
+
+        ];
+
+
+
+        /* =================================================
+           59 LỜI CHÚC
+        ================================================= */
+
+        const christmasWishes = [
+
+            "Chúc bạn Giáng Sinh an lành, luôn vui vẻ, hạnh phúc và gặp thật nhiều may mắn trong cuộc sống nhé! 🎄",
+
+            "Merry Christmas! Chúc bạn có một mùa Noel ấm áp bên gia đình, bạn bè và những người thân yêu.",
+
+            "Chúc bạn một Giáng Sinh thật vui, luôn giữ nụ cười trên môi và đạt được mọi điều mong muốn.",
+
+            "Noel vui vẻ nha! Mong mọi điều tốt đẹp sẽ đến với bạn trong mùa lễ hội này.",
+
+            "Chúc cơm sườn mãi đỉnh, mãi một tình yêu .",
+
+            "Merry Christmas! Chúc bạn luôn khỏe mạnh, vui vẻ và có thật nhiều kỷ niệm đẹp.",
+
+            "Chúc bạn một mùa Noel tràn ngập tiếng cười, niềm vui và những điều bất ngờ đáng yêu.",
+
+            "Giáng Sinh an lành nhé! Mong bạn luôn được yêu thương và gặp nhiều điều may mắn.",
+
+            "Chúc bạn Noel vui vẻ, ấm áp và có một năm mới thật nhiều thành công.",
+
+            "Merry Christmas! Chúc bạn luôn tự tin, mạnh mẽ và đạt được những mục tiêu của mình.",
+
+            "Chúc bạn một mùa Giáng Sinh thật hạnh phúc, bình yên và đầy ắp niềm vui.",
+
+            "Noel đến rồi, chúc bạn luôn vui vẻ, may mắn và có những ngày thật đáng nhớ.",
+
+            "Chúc bạn Giáng Sinh vui vẻ, luôn học giỏi, khỏe mạnh và gặp nhiều thuận lợi.",
+
+            "Mong Giáng Sinh mang đến cho bạn thật nhiều niềm vui và những khoảnh khắc tuyệt vời.",
+
+            "Chúc bạn có một mùa Noel thật ấm áp và luôn được mọi người yêu quý.",
+
+            "Merry Christmas! Chúc bạn luôn vui vẻ, thành công và gặp nhiều điều tốt lành.",
+
+            "Chúc bạn Giáng Sinh bình an, hạnh phúc và luôn giữ được sự lạc quan trong cuộc sống.",
+
+            "Noel vui vẻ nhé! Chúc bạn có thật nhiều năng lượng tích cực mỗi ngày.",
+
+            "Chúc bạn mùa Giáng Sinh này nhận được nhiều yêu thương và những món quà ý nghĩa.",
+
+            "Merry Christmas! Chúc bạn luôn may mắn và đạt được những điều mình mong muốn.",
+
+            "Chúc bạn một Giáng Sinh thật đặc biệt, vui vẻ và đáng nhớ bên những người thân yêu.",
+
+            "Noel an lành nha! Mong bạn luôn gặp thuận lợi trong học tập và cuộc sống.",
+
+            "Chúc bạn Giáng Sinh tràn đầy hạnh phúc, tiếng cười và những điều tuyệt vời.",
+
+            "Merry Christmas! Chúc bạn luôn vui vẻ, khỏe mạnh và thành công.",
+
+            "Chúc bạn có một mùa Noel ấm áp, nhiều niềm vui và thật nhiều kỷ niệm đẹp.",
+
+            "Giáng Sinh vui vẻ! Chúc bạn luôn bình an và gặp nhiều may mắn trong tương lai.",
+
+            "Chúc bạn Noel thật vui, luôn giữ tinh thần tích cực và đạt được ước mơ của mình.",
+
+            "Merry Christmas! Chúc bạn có những ngày lễ thật tuyệt vời bên gia đình và bạn bè.",
+
+            "Chúc bạn một mùa Giáng Sinh đầy yêu thương, hạnh phúc và bình an.",
+
+            "Noel đến rồi, chúc bạn luôn vui vẻ, thành công và gặp nhiều điều may mắn.",
+
+            "Chúc bạn Giáng Sinh an lành, luôn nở nụ cười và có thật nhiều niềm vui.",
+
+            "Merry Christmas! Mong bạn có một mùa lễ hội thật ấm áp và đáng nhớ.",
+
+            "Chúc bạn Noel vui vẻ, sức khỏe dồi dào và mọi chuyện đều thuận lợi.",
+
+            "Chúc bạn một Giáng Sinh hạnh phúc, luôn được yêu thương và quan tâm.",
+
+            "Merry Christmas! Chúc bạn luôn đạt được những thành tích tốt và có nhiều niềm vui.",
+
+            "Chúc bạn mùa Noel này thật vui vẻ, bình yên và tràn ngập tiếng cười.",
+
+            "Chúc ní sớm có nửa kia cho mình nhé.",
+
+            "Chúc bạn Giáng Sinh thật tuyệt vời, luôn vui vẻ và giữ mãi sự nhiệt huyết.",
+
+            "Merry Christmas! Chúc bạn có thật nhiều khoảnh khắc đẹp trong mùa lễ này.",
+
+            "Chúc bạn Noel vui vẻ, hạnh phúc và luôn gặp những điều tốt đẹp nhất.",
+
+            "Chúc bạn một mùa Giáng Sinh thật ấm áp, vui vẻ và nhiều kỷ niệm đáng nhớ.",
+
+            "Merry Christmas! Chúc bạn luôn bình an, may mắn và thành công trong mọi việc.",
+
+            "Chúc bạn Noel tràn đầy niềm vui, tiếng cười và những điều bất ngờ thú vị.",
+
+            "Giáng Sinh vui vẻ nha! Mong bạn luôn hạnh phúc và đạt được những điều mình mong muốn.",
+
+            "Chúc bạn có một mùa Noel thật đáng nhớ cùng những người bạn tuyệt vời.",
+
+            "Merry Christmas! Chúc bạn luôn mạnh khỏe, vui vẻ và gặp nhiều may mắn.",
+
+            "Chúc bạn Giáng Sinh an lành, mọi dự định đều thuận lợi và thành công.",
+
+            "Noel vui vẻ! Chúc bạn luôn giữ được sự vui tươi và tinh thần lạc quan.",
+
+            "Chúc ní sớm cua được anh tốt hơn anh Xuân Mạnh.",
+
+            "Merry Christmas! Chúc bạn luôn tỏa sáng, tự tin và đạt nhiều thành công.",
+
+            "Chúc bạn Giáng Sinh thật vui vẻ, có nhiều niềm vui và những kỷ niệm đẹp.",
+
+            "Noel an lành nhé! Chúc bạn luôn may mắn và hạnh phúc mỗi ngày.",
+
+            "Chúc bạn mùa Giáng Sinh này thật nhiều tiếng cười và những điều tốt đẹp.",
+
+            "Merry Christmas! Chúc bạn luôn khỏe mạnh, vui vẻ và thành công trong cuộc sống.",
+
+            "Chúc bạn một Noel thật ấm áp, bình an và nhận được nhiều yêu thương.",
+
+            "Chúc bạn Giáng Sinh vui vẻ, mọi ước mơ đều từng bước trở thành hiện thực.",
+
+            "Merry Christmas! Chúc bạn luôn gặp may mắn, học tập tốt và có nhiều niềm vui.",
+
+            "Chúc bạn một mùa Noel tuyệt vời, luôn hạnh phúc và tràn đầy năng lượng.",
+
+            "Giáng Sinh an lành! Chúc bạn có những ngày lễ thật vui vẻ, bình yên và đáng nhớ. 🎅🎄"
+
+        ];
+
+
+
+        /* =================================================
+           KIỂM TRA
+        ================================================= */
+
+        console.log(
+            "🎄 Christmas people:",
+            christmasPeople.length
+        );
+
+        console.log(
+            "🎁 Christmas wishes:",
+            christmasWishes.length
+        );
+
+
+        if (
+            christmasPeople.length !== 59 ||
+            christmasWishes.length !== 59
+        ) {
+
+            console.error(
+                "❌ Dữ liệu phải có đúng 59 người và 59 lời chúc!"
+            );
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           LẤY ELEMENT
+        ================================================= */
+
+        const giftContainer =
+            document.getElementById(
+                "christmasGiftContainer"
+            );
+
+
+        const treeRotator =
+            document.getElementById(
+                "christmasTreeRotator"
+            );
+
+
+        if (!giftContainer) {
+
+            console.error(
+                "❌ Không tìm thấy christmasGiftContainer"
+            );
+
+            return;
+
+        }
+
+
+        if (!treeRotator) {
+
+            console.error(
+                "❌ Không tìm thấy christmasTreeRotator"
+            );
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           6 VÒNG = 59 HỘP
+        ================================================= */
+
+        const rings = [
+
+            {
+                count: 6,
+                y: -270,
+                radius: 125
+            },
+
+            {
+                count: 8,
+                y: -175,
+                radius: 190
+            },
+
+            {
+                count: 9,
+                y: -70,
+                radius: 250
+            },
+
+            {
+                count: 10,
+                y: 45,
+                radius: 305
+            },
+
+            {
+                count: 12,
+                y: 155,
+                radius: 355
+            },
+
+            {
+                count: 14,
+                y: 250,
+                radius: 390
+            }
+
+        ];
+
+
+
+        /* =================================================
+           TẠO HỘP QUÀ
+        ================================================= */
+
+        let giftIndex = 0;
+
+
+        rings.forEach(
+            (ring, ringIndex) => {
+
+
+                for (
+                    let i = 0;
+                    i < ring.count;
+                    i++
+                ) {
+
+
+                    const currentIndex =
+                        giftIndex;
+
+
+                    giftIndex++;
+
+
+                    const gift =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    gift.className =
+                        "gift-item";
+
+
+                    /*
+                       Mỗi vòng lệch góc một chút
+                       để hộp không nằm thẳng hàng.
+                    */
+
+                    const angle =
+                        (
+                            360 /
+                            ring.count
+                        ) * i
+                        +
+                        ringIndex * 13;
+
+
+                    /*
+                       Vị trí 3D
+                    */
+
+                    gift.style.transform = `
+                        translateY(${ring.y}px)
+                        rotateY(${angle}deg)
+                        translateZ(${ring.radius}px)
+                    `;
+
+
+
+                    /* =====================================
+                       HỘP
+                    ===================================== */
+
+                    gift.innerHTML = `
+
+                        <div class="gift-box">
+
+                            <div class="gift-lid"></div>
+
+                            <div class="gift-bow"></div>
+
+                            <div class="gift-name">
+                                ${christmasPeople[currentIndex]}
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+
+                    /* =====================================
+                       CLICK
+                    ===================================== */
+
+                    gift.addEventListener(
+                        "click",
+                        function(event) {
+
+
+                            event.preventDefault();
+
+                            event.stopPropagation();
+
+
+                            /*
+                               Lấy đúng người và
+                               đúng lời chúc theo index.
+                            */
+
+                            const selectedName =
+                                christmasPeople[
+                                    currentIndex
+                                ];
+
+
+                            const selectedWish =
+                                christmasWishes[
+                                    currentIndex
+                                ];
+
+
+                            console.log(
+                                "🎁 Mở quà:",
+                                selectedName
+                            );
+
+
+                            openChristmasGift(
+                                selectedName,
+                                selectedWish
+                            );
+
+
+                        }
+                    );
+
+
+
+                    /*
+                       Thêm hộp vào cây
+                    */
+
+                    giftContainer.appendChild(
+                        gift
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =================================================
+           HÀM MỞ QUÀ
+        ================================================= */
+
+        function openChristmasGift(
+            name,
+            wish
+        ) {
+
+
+            /*
+               Dừng cây xoay
+            */
+
+            treeRotator.style.animationPlayState =
+                "paused";
+
+
+
+            /*
+               Tạo popup
+            */
+
+            const popup =
+                document.createElement(
+                    "div"
+                );
+
+
+            popup.className =
+                "gift-popup";
+
+
+
+            /*
+               Nội dung
+            */
+
+            popup.innerHTML = `
+
+                <div class="gift-card">
 
                     <button
-                        class="button"
-                        onclick="copyEmail()"
+                        type="button"
+                        class="gift-close"
+                        aria-label="Đóng"
                     >
-
-                        Sao chép
-
+                        ×
                     </button>
 
 
-                    <!--
-                        mailto:
-                        mở ứng dụng email
-                    -->
-
-                    <a
-                        href="mailto:yourmail@gmail.com"
-                        class="button dark"
+                    <div
+                        class="christmas-popup-icon"
                     >
-
-                        Gửi thư
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================
-                 CARD 3 - SOCIAL
-            ================================== -->
-
-            <div class="contact-card">
-
-
-                <div class="card-top">
-
-                    <div class="icon social-icon">
-
-                        ◎
-
+                        🎄
                     </div>
 
 
-                    <div class="card-label">
+                    <h3>
+                        🎁 ${name}
+                    </h3>
 
-                        MẠNG XÃ HỘI
 
+                    <p>
+                        ${wish}
+                    </p>
+
+
+                    <div
+                        style="
+                            margin-top:20px;
+                            font-size:26px;
+                        "
+                    >
+                        ❄️ 🎁 ❄️
                     </div>
 
                 </div>
 
+            `;
 
-                <h2>
 
-                    @yourusername
 
-                </h2>
+            /*
+               Đưa popup vào body
+            */
 
+            document.body.appendChild(
+                popup
+            );
 
-                <p>
 
-                    Theo dõi Instagram, hình ảnh
-                    cuộc sống và video TikTok.
 
-                </p>
+            /*
+               Cho animation popup chạy
+            */
 
+            requestAnimationFrame(
+                () => {
 
-                <div class="card-buttons">
+                    popup.classList.add(
+                        "show"
+                    );
 
+                }
+            );
 
-                    <!-- INSTAGRAM -->
 
-                    <a
-                        href="https://www.instagram.com/yourusername/"
-                        target="_blank"
-                        class="button instagram"
-                    >
 
-                        Instagram
+            /*
+               Nút đóng
+            */
 
-                    </a>
+            const closeButton =
+                popup.querySelector(
+                    ".gift-close"
+                );
 
 
-                    <!-- TIKTOK -->
+            closeButton.addEventListener(
+                "click",
+                function(event) {
 
-                    <a
-                        href="https://www.tiktok.com/@yourusername"
-                        target="_blank"
-                        class="button"
-                    >
+                    event.preventDefault();
 
-                        TikTok
+                    event.stopPropagation();
 
-                    </a>
+                    closeChristmasGift(
+                        popup
+                    );
 
+                }
+            );
 
-                    <!-- FACEBOOK -->
 
-                    <a
-                        href="https://www.facebook.com/yourusername"
-                        target="_blank"
-                        class="button"
-                    >
 
-                        Facebook
+            /*
+               Bấm nền tối để đóng
+            */
 
-                    </a>
+            popup.addEventListener(
+                "click",
+                function(event) {
 
-                </div>
+                    if (
+                        event.target === popup
+                    ) {
 
-            </div>
+                        closeChristmasGift(
+                            popup
+                        );
 
-        </div>
+                    }
 
+                }
+            );
 
 
-        <!-- ================================
-             REACTION
-        ================================= -->
+        }
 
-        <div class="reaction-box">
 
 
-            <div class="reaction-header">
+        /* =================================================
+           ĐÓNG QUÀ
+        ================================================= */
 
+        function closeChristmasGift(
+            popup
+        ) {
 
-                <div>
 
-                    <span class="reaction-label">
+            popup.classList.remove(
+                "show"
+            );
 
-                        TƯƠNG TÁC TRÊN ✨
 
-                    </span>
+            setTimeout(
+                () => {
 
 
-                    <h2>
+                    if (
+                        popup &&
+                        popup.parentNode
+                    ) {
 
-                        Thả tim & Cảm nhận
-                        về góc nhỏ của mình:
+                        popup.remove();
 
-                    </h2>
+                    }
 
-                </div>
 
+                    /*
+                       Cho cây xoay lại
+                    */
 
-                <div class="total">
+                    treeRotator.style.animationPlayState =
+                        "running";
 
-                    <span id="total">
 
-                        78
-
-                    </span>
-
-                    lượt thả tim & tương tác
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ==============================
-                 REACTION BUTTONS
-            =============================== -->
-
-            <div class="reactions">
-
-
-                <button
-                    class="reaction"
-                    onclick="react('love')"
-                >
-
-                    ❤️ Yêu thích
-
-                    <span id="love">
-
-                        44
-
-                    </span>
-
-                </button>
-
-
-
-                <button
-                    class="reaction"
-                    onclick="react('energy')"
-                >
-
-                    🔥 Năng lượng
-
-                    <span id="energy">
-
-                        17
-
-                    </span>
-
-                </button>
-
-
-
-                <button
-                    class="reaction"
-                    onclick="react('inspire')"
-                >
-
-                    🚀 Truyền cảm hứng
-
-                    <span id="inspire">
-
-                        6
-
-                    </span>
-
-                </button>
-
-
-
-                <button
-                    class="reaction"
-                    onclick="react('calm')"
-                >
-
-                    🔮 Thư thái
-
-                    <span id="calm">
-
-                        7
-
-                    </span>
-
-                </button>
-
-
-
-                <button
-                    class="reaction"
-                    onclick="react('creative')"
-                >
-
-                    ✨ Sáng tạo
-
-                    <span id="creative">
-
-                        4
-
-                    </span>
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-    </main>
-
-
-
-    <!-- =====================================
-         JAVASCRIPT
-    ====================================== -->
-
-    <script>
-
-
-        /* =================================
-           COPY EMAIL
-        ================================== */
-
-        function copyEmail() {
-
-
-            // Email của bạn
-
-            const email =
-                "yourmail@gmail.com";
-
-
-            // Copy email vào clipboard
-
-            navigator.clipboard.writeText(email);
-
-
-            // Thông báo
-
-            alert(
-                "Đã sao chép email: "
-                + email
+                },
+                250
             );
 
         }
 
 
 
-        /* =================================
-           REACTION
-        ================================== */
+        /* =================================================
+           KIỂM TRA CUỐI
+        ================================================= */
 
-        function react(type) {
-
-
-            /*
-                Tìm phần tử có id tương ứng.
-
-                Ví dụ:
-
-                react("love")
-
-                sẽ tìm:
-
-                id="love"
-            */
-
-            const element =
-                document.getElementById(type);
+        const totalGifts =
+            giftContainer.querySelectorAll(
+                ".gift-item"
+            ).length;
 
 
-            /*
-                Lấy số hiện tại
-            */
-
-            let number =
-                parseInt(
-                    element.innerText
-                );
+        console.log(
+            "🎁 Tổng số hộp quà:",
+            totalGifts
+        );
 
 
-            /*
-                Tăng thêm 1
-            */
+        if (
+            totalGifts === 59
+        ) {
 
-            number++;
+            console.log(
+                "✅ 59 hộp quà đã được tạo thành công!"
+            );
 
+        } else {
 
-            /*
-                Hiển thị số mới
-            */
-
-            element.innerText =
-                number;
-
-
-            /*
-                Tăng tổng số tương tác
-            */
-
-            const total =
-                document.getElementById("total");
-
-
-            let totalNumber =
-                parseInt(
-                    total.innerText
-                );
-
-
-            totalNumber++;
-
-
-            total.innerText =
-                totalNumber;
+            console.error(
+                "❌ Số hộp quà không đúng:",
+                totalGifts
+            );
 
         }
 
+    }
 
-    </script>
 
+
+    /* =====================================================
+       KHỞI CHẠY
+    ===================================================== */
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initChristmasTree
+        );
+
+    } else {
+
+        initChristmasTree();
+
+    }
+
+
+})();
+
+</script>
+</section>
+
+
+<!-- ======================
+     WISH
+====================== -->
+
+<section
+    id="wish"
+    class="wish-section"
+>
+
+    <div class="wish-card">
+
+        <div class="santa">
+            🎅
+        </div>
+
+        <h2>
+            Merry Christmas
+        </h2>
+
+        <p>
+
+            Mong rằng mùa Giáng Sinh này
+            sẽ mang đến cho bạn thật nhiều
+            niềm vui, tiếng cười và những
+            khoảnh khắc đáng nhớ bên
+            những người thân yêu. Trung đội 1
+            đại đội 9, FA mãi đỉnh.
+
+        </p>
+
+        <div class="snowman">
+            ☃️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================
+     FOOTER
+====================== -->
+
+<footer>
+
+    <h3>
+        🎄 Merry Christmas 🎄
+    </h3>
+
+    <p>
+        Made with ❤️ and Christmas magic
+    </p>
+
+    <p class="copyright">
+        © 2026 Phan Như Chí Trung
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* ======================
+   COUNTDOWN
+====================== */
+
+function updateCountdown() {
+
+    const now = new Date();
+
+
+    let christmas = new Date(
+
+        now.getFullYear(),
+
+        11,
+
+        25,
+
+        0,
+        0,
+        0
+
+    );
+
+
+    if (now > christmas) {
+
+        christmas = new Date(
+
+            now.getFullYear() + 1,
+
+            11,
+
+            25,
+
+            0,
+            0,
+            0
+
+        );
+
+    }
+
+
+    const difference =
+        christmas - now;
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000 * 60)) % 60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference /
+            1000) % 60
+        );
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days).padStart(2,"0");
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours).padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+updateCountdown();
+
+
+
+/* ======================
+   SNOW
+====================== */
+
+function createSnowflake() {
+
+    const snowflake =
+        document.createElement("div");
+
+
+    snowflake.classList.add(
+        "snowflake"
+    );
+
+
+    snowflake.innerHTML = "❄";
+
+
+    snowflake.style.left =
+        Math.random() * 100 + "vw";
+
+
+    snowflake.style.fontSize =
+        Math.random() * 15 + 8 + "px";
+
+
+    snowflake.style.opacity =
+        Math.random();
+
+
+    const duration =
+        Math.random() * 5 + 5;
+
+
+    snowflake.style.animationDuration =
+        duration + "s";
+
+
+    document.body.appendChild(
+        snowflake
+    );
+
+
+    setTimeout(
+
+        () => {
+            snowflake.remove();
+        },
+
+        duration * 1000
+
+    );
+
+}
+
+
+setInterval(
+    createSnowflake,
+    150
+);
+
+
+
+/* ======================
+   OPEN GIFT
+====================== */
+
+function openGift() {
+
+    const gift =
+        document.querySelector(".gift");
+
+
+    gift.classList.toggle("open");
+
+
+    if (
+        gift.classList.contains("open")
+    ) {
+
+        createConfetti();
+
+    }
+
+}
+
+
+
+/* ======================
+   CONFETTI
+====================== */
+
+function createConfetti() {
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        const confetti =
+            document.createElement("div");
+
+
+        const icons = [
+            "🎄",
+            "🎁",
+            "⭐",
+            "❄",
+            "❤️"
+        ];
+
+
+        confetti.innerHTML =
+            icons[
+                Math.floor(
+                    Math.random() *
+                    icons.length
+                )
+            ];
+
+
+        confetti.style.position =
+            "fixed";
+
+
+        confetti.style.left =
+            "50%";
+
+
+        confetti.style.top =
+            "50%";
+
+
+        confetti.style.fontSize =
+            Math.random() * 20 +
+            15 + "px";
+
+
+        confetti.style.zIndex =
+            "9999";
+
+
+        confetti.style.pointerEvents =
+            "none";
+
+
+        const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+        const distance =
+            Math.random() *
+            300 + 100;
+
+
+        const x =
+            Math.cos(angle) *
+            distance;
+
+
+        const y =
+            Math.sin(angle) *
+            distance;
+
+
+        confetti.animate(
+
+            [
+
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(0)"
+                },
+
+                {
+
+                    transform:
+                        `translate(
+                            calc(-50% + ${x}px),
+                            calc(-50% + ${y}px)
+                        ) scale(1)`
+
+                },
+
+                {
+
+                    transform:
+                        `translate(
+                            calc(-50% + ${x * 1.5}px),
+                            calc(-50% + ${y * 1.5}px)
+                        )
+                        rotate(360deg)`,
+
+                    opacity: 0
+
+                }
+
+            ],
+
+            {
+
+                duration: 1500,
+
+                easing:
+                    "cubic-bezier(.2,.8,.3,1)"
+
+            }
+
+        );
+
+
+        document.body.appendChild(
+            confetti
+        );
+
+
+        setTimeout(
+
+            () => {
+                confetti.remove();
+            },
+
+            1500
+
+        );
+
+    }
+
+}
+
+</script>
 
 </body>
-
 </html>
+```
