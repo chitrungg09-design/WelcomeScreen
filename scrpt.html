@@ -1,650 +1,1574 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Profile | Your Name</title>
+<title>Profile | Phan Như Chí Trung</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f3;
-    color: #171717;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: rgba(245,245,243,0.85);
-    backdrop-filter: blur(15px);
-
-    z-index: 100;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.nav-right {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-right a {
-    color: #171717;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.nav-right a:hover {
-    opacity: .5;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
-/* =========================
-   MAIN PROFILE
-========================= */
+:root{
 
-.container {
-    max-width: 1050px;
-    margin: auto;
+    --blue:#2563eb;
+    --sky:#0ea5e9;
+    --light:#eff6ff;
+    --dark:#0f172a;
+    --gray:#64748b;
 
-    min-height: 100vh;
-
-    padding: 130px 30px 80px;
 }
 
 
-/* =========================
-   PROFILE HEADER
-========================= */
 
-.profile {
-    display: grid;
-    grid-template-columns: 220px 1fr;
+body{
 
-    gap: 55px;
+    font-family:Arial, Helvetica, sans-serif;
 
-    align-items: start;
+    background:#f8fafc;
+
+    color:var(--dark);
+
 }
 
 
-/* AVATAR */
 
-.avatar {
-    width: 210px;
-    height: 210px;
+/* NAV */
 
-    border-radius: 50%;
+.navbar{
 
-    overflow: hidden;
+    position:fixed;
 
-    background: #dededb;
+    top:0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width:100%;
 
-    font-size: 60px;
-    font-weight: bold;
-}
+    height:75px;
 
-.avatar img {
-    width: 100%;
-    height: 100%;
+    display:flex;
 
-    object-fit: cover;
-}
+    justify-content:space-between;
 
+    align-items:center;
 
-/* INFO */
+    padding:0 8%;
 
-.profile-info h1 {
-    font-size: clamp(42px, 6vw, 72px);
+    background:white;
 
-    letter-spacing: -4px;
+    box-shadow:0 5px 20px #0001;
 
-    line-height: 1;
+    z-index:10;
 
-    margin-bottom: 18px;
-}
-
-.username {
-    font-size: 16px;
-    color: #777;
-
-    margin-bottom: 25px;
-}
-
-.bio {
-    max-width: 600px;
-
-    font-size: 18px;
-    line-height: 1.7;
-
-    color: #444;
 }
 
 
-/* SOCIAL */
 
-.social {
-    display: flex;
-    gap: 10px;
+.logo{
 
-    margin-top: 30px;
+    font-size:22px;
 
-    flex-wrap: wrap;
-}
+    font-weight:800;
 
-.social a {
-    text-decoration: none;
+    color:var(--blue);
 
-    color: #171717;
-
-    border: 1px solid #d0d0cc;
-
-    padding: 10px 18px;
-
-    border-radius: 100px;
-
-    font-size: 14px;
-
-    transition: .25s;
-}
-
-.social a:hover {
-    background: #171717;
-    color: white;
 }
 
 
-/* =========================
-   DIVIDER
-========================= */
 
-.divider {
-    width: 100%;
-    height: 1px;
+.navbar a{
 
-    background: #d9d9d5;
+    text-decoration:none;
 
-    margin: 80px 0;
+    color:#334155;
+
+    margin-left:25px;
+
 }
 
 
-/* =========================
-   INFORMATION
-========================= */
 
-.info-grid {
-    display: grid;
+.navbar a:hover{
 
-    grid-template-columns: repeat(3, 1fr);
+    color:var(--blue);
 
-    gap: 20px;
-}
-
-.info-box {
-    padding: 25px;
-
-    border: 1px solid #deded9;
-
-    border-radius: 16px;
-
-    background: #fafaf8;
-
-    transition: .3s;
-}
-
-.info-box:hover {
-    transform: translateY(-5px);
-}
-
-.info-label {
-    color: #888;
-
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 10px;
-}
-
-.info-value {
-    font-size: 18px;
-
-    font-weight: 500;
 }
 
 
-/* =========================
-   ABOUT
-========================= */
 
-.about {
-    max-width: 750px;
-}
+/* MAIN */
 
-.about h2 {
-    font-size: 38px;
 
-    letter-spacing: -2px;
+.container{
 
-    margin-bottom: 20px;
-}
+    max-width:1150px;
 
-.about p {
-    font-size: 17px;
+    margin:auto;
 
-    line-height: 1.8;
+    padding:130px 30px;
 
-    color: #555;
 }
 
 
-/* =========================
-   INTERESTS
-========================= */
 
-.interests h2 {
-    font-size: 38px;
+/* HERO */
 
-    letter-spacing: -2px;
 
-    margin-bottom: 25px;
-}
+.hero{
 
-.tags {
-    display: flex;
-    gap: 10px;
 
-    flex-wrap: wrap;
-}
+    display:grid;
 
-.tag {
-    padding: 12px 18px;
+    grid-template-columns:250px 1fr;
 
-    background: #e9e9e5;
+    gap:60px;
 
-    border-radius: 100px;
+    align-items:center;
 
-    font-size: 14px;
+
 }
 
 
-/* =========================
-   FOOTER
-========================= */
 
-footer {
-    padding: 40px 6%;
+.avatar{
 
-    border-top: 1px solid #d9d9d5;
+    width:230px;
 
-    display: flex;
+    height:230px;
 
-    justify-content: space-between;
+    border-radius:35px;
 
-    color: #777;
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--sky)
+    );
 
-    font-size: 13px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    color:white;
+
+    font-size:80px;
+
+    font-weight:900;
+
+
+    box-shadow:0 20px 40px #2563eb55;
+
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
 
-@media (max-width: 700px) {
+.hero h1{
 
-    .navbar {
-        height: 60px;
-        padding: 0 25px;
-    }
+    font-size:70px;
 
-    .nav-right {
-        gap: 12px;
-    }
+    letter-spacing:-4px;
 
-    .nav-right a {
-        font-size: 12px;
-    }
-
-    .container {
-        padding: 110px 25px 60px;
-    }
-
-    .profile {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-    }
-
-    .avatar {
-        width: 150px;
-        height: 150px;
-    }
-
-    .profile-info h1 {
-        letter-spacing: -2px;
-    }
-
-    .bio {
-        font-size: 16px;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .divider {
-        margin: 55px 0;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
 }
+
+
+
+.hero h1 span{
+
+    color:var(--blue);
+
+}
+
+
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+
+
+.description{
+
+    margin-top:25px;
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+/* BUTTON */
+
+
+.buttons{
+
+    margin-top:35px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    padding:13px 25px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    margin-right:10px;
+
+}
+
+
+
+.primary{
+
+    background:var(--blue);
+
+    color:white;
+
+}
+
+
+
+.secondary{
+
+    border:1px solid #cbd5e1;
+
+    color:var(--dark);
+
+}
+
+
+
+
+
+/* CARD */
+
+
+.section{
+
+    margin-top:100px;
+
+}
+
+
+
+.title{
+
+    font-size:38px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.grid{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    border:1px solid #e2e8f0;
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px #0001;
+
+}
+
+
+
+.card h3{
+
+    color:var(--blue);
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* TIMELINE */
+
+
+.timeline{
+
+    border-left:3px solid var(--blue);
+
+    padding-left:30px;
+
+}
+
+
+
+.item{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.item h3{
+
+    color:var(--blue);
+
+}
+
+
+
+/* SKILL */
+
+
+.skill{
+
+    margin-bottom:20px;
+
+}
+
+
+.skill-name{
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+
+
+.bar{
+
+    height:10px;
+
+    background:#dbeafe;
+
+    border-radius:20px;
+
+    margin-top:10px;
+
+}
+
+
+
+.progress{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--blue),
+        var(--sky)
+    );
+
+    border-radius:20px;
+
+}
+
+
+
+/* TAG */
+
+
+.tags{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.tag{
+
+    padding:12px 20px;
+
+    background:var(--light);
+
+    color:var(--blue);
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    margin-top:80px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+.hero{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.avatar{
+
+width:160px;
+
+height:160px;
+
+}
+
+
+
+}
+
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     NAVBAR
-========================= -->
-
 <nav class="navbar">
 
-    <div class="logo">
-        YOUR.NAME
-    </div>
+<div class="logo">
+Phan Như Chí Trung
+</div>
 
-    <div class="nav-right">
-        <a href="#about">About</a>
-        <a href="#info">Info</a>
-        <a href="#contact">Contact</a>
-    </div>
+
+<div>
+
+<a href="#about">
+Giới thiệu
+</a>
+
+<a href="#study">
+Học tập
+</a>
+
+<a href="#skill">
+Kỹ năng
+</a>
+
+<a href="#hobby">
+    Sở thích
+</a>
+
+<a href="#contact">
+    Liên hệ
+</a>
+
+</div>
 
 </nav>
 
 
 
-<!-- =========================
-     CONTENT
-========================= -->
 
 <main class="container">
 
 
-    <!-- PROFILE -->
+<section id="about" class="hero">
 
-    <section class="profile">
 
-        <div class="avatar">
+<div class="avatar">
 
-            <!--
-            Muốn dùng ảnh:
-            thay chữ "A" bằng:
+T
 
-            <img src="avatar.jpg">
-            -->
+</div>
 
-            A
 
-        </div>
 
+<div>
 
-        <div class="profile-info">
+<h1>
 
-            <h1>
-                Nguyễn Văn A
-            </h1>
+Xin chào,
+<br>
 
-            <div class="username">
-                @yourusername
-            </div>
+mình là
+<span>
+Trung
+</span>
 
-            <p class="bio">
+</h1>
 
-                Xin chào, mình là A.
-                Mình là một học sinh yêu thích công nghệ,
-                lập trình và khám phá những điều mới.
 
-                <br><br>
+<p class="subtitle">
 
-                Hiện tại mình đang tập trung vào việc học,
-                phát triển bản thân và xây dựng những
-                dự án cá nhân.
+Sinh viên ngành Logistics - Đại học Giao thông vận tải TP.HCM
 
-            </p>
+</p>
 
 
-            <div class="social">
 
-                <a href="#">
-                    Facebook
-                </a>
+<p class="description">
 
-                <a href="#">
-                    Instagram
-                </a>
+Mình đến từ Vũng Tàu và hiện đang học tập tại TP.HCM.
+Mình đang học thêm về công nghệ thông tin, giao lưu, học hỏi và cố gắng hơn mỗi ngày
+</p>
 
-                <a href="#">
-                    GitHub
-                </a>
 
-                <a href="#">
-                    Email
-                </a>
 
-            </div>
+<div class="buttons">
 
-        </div>
+<a class="btn primary" href="#contact">
+Liên hệ mình
+</a>
 
-    </section>
 
+<a class="btn secondary" href="#study">
+Xem hành trình
+</a>
 
 
-    <!-- DIVIDER -->
+</div>
 
-    <div class="divider"></div>
 
+</div>
 
 
-    <!-- INFORMATION -->
+</section>
 
-    <section id="info">
 
-        <div class="info-grid">
 
-            <div class="info-box">
 
-                <div class="info-label">
-                    Location
-                </div>
 
-                <div class="info-value">
-                    Vietnam 🇻🇳
-                </div>
+<section class="section">
 
-            </div>
+<h2 class="title">
+Thông tin nhanh
+</h2>
 
 
-            <div class="info-box">
 
-                <div class="info-label">
-                    Occupation
-                </div>
+<div class="grid">
 
-                <div class="info-value">
-                    Student
-                </div>
 
-            </div>
+<div class="card">
 
+<h3>
+📍 Quê quán
+</h3>
 
-            <div class="info-box">
+<p>
+Hà Tĩnh - Việt Nam
+</p>
 
-                <div class="info-label">
-                    Currently
-                </div>
+</div>
 
-                <div class="info-value">
-                    Learning
-                </div>
 
-            </div>
 
-        </div>
+<div class="card">
 
-    </section>
+<h3>
+🎓 Hiện tại
+</h3>
 
+<p>
+Sinh viên UTH
+</p>
 
+</div>
 
-    <div class="divider"></div>
 
 
+<div class="card">
 
-    <!-- ABOUT -->
+<h3>
+⚡ Chuyên ngành
+</h3>
 
-    <section class="about" id="about">
+<p>
+Logistics và quản lý chuỗi cung ứng
+</p>
 
-        <h2>
-            About me.
-        </h2>
+</div>
 
-        <p>
 
-            Mình thích tìm hiểu về công nghệ,
-            website và lập trình.
+</div>
 
-            Ngoài việc học, mình cũng thích nghe nhạc,
-            chơi thể thao, xem phim và dành thời gian
-            cho những người mình yêu quý.
 
-            <br><br>
+</section>
 
-            Mục tiêu của mình là từng bước xây dựng
-            những sản phẩm của riêng mình và trở thành
-            một phiên bản tốt hơn của chính mình.
 
-        </p>
 
-    </section>
 
 
+<section id="study" class="section">
 
-    <div class="divider"></div>
 
+<h2 class="title">
+Hành trình học tập
+</h2>
 
 
-    <!-- INTERESTS -->
 
-    <section class="interests">
+<div class="timeline">
 
-        <h2>
-            Things I like.
-        </h2>
 
-        <div class="tags">
+<div class="item">
 
-            <div class="tag">
-                💻 Coding
-            </div>
+<h3>
+THPT chuyên Lê Quý Đôn - Vũng Tàu
+</h3>
 
-            <div class="tag">
-                🎧 Music
-            </div>
+<p>
 
-            <div class="tag">
-                🏀 Basketball
-            </div>
+Rèn luyện tính tự giác,
+kỷ luật và nền tảng học tập.
 
-            <div class="tag">
-                📚 Learning
-            </div>
+</p>
 
-            <div class="tag">
-                🎮 Gaming
-            </div>
+</div>
 
-            <div class="tag">
-                ✈️ Traveling
-            </div>
 
-        </div>
 
-    </section>
 
+<div class="item">
 
+<h3>
+Đại học Giao thông vận tải TP.HCM
+</h3>
 
-    <div class="divider"></div>
+<p>
 
+Theo học Logistics,
+tìm hiểu kỹ thuật và công nghệ.
 
+</p>
 
-    <!-- CONTACT -->
+</div>
 
-    <section id="contact" class="about">
 
-        <h2>
-            Let's connect.
-        </h2>
 
-        <p>
-            Nếu bạn muốn liên hệ hoặc kết nối với mình,
-            bạn có thể tìm thấy mình trên các nền tảng
-            mạng xã hội phía trên.
-        </p>
+</div>
 
-    </section>
+
+</section>
+
+
+
+
+
+
+
+<section id="skill" class="section">
+
+
+<h2 class="title">
+Kỹ năng đang phát triển
+</h2>
+
+
+
+<div class="card">
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Nấu ăn
+</span>
+
+<span>
+30%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:30%">
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Quản lý thời gian
+</span>
+
+<span>
+60%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:60%">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-name">
+
+<span>
+Tiếng Anh
+</span>
+
+<span>
+35%
+</span>
+
+</div>
+
+
+<div class="bar">
+
+<div class="progress" style="width:35%">
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section id="hobby" class="section">
+
+
+<h2 class="title">
+Sở thích
+</h2>
+
+
+<div class="tags">
+
+
+<div class="tag">
+ ⚽ đá bóng
+</div>
+
+
+<div class="tag">
+ 🎸 guitar
+</div>
+
+
+<div class="tag">
+🎧 Âm nhạc
+</div>
+
+
+<div class="tag">
+💻 Công nghệ
+</div>
+
+
+<div class="tag">
+📚 Tự học
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- =========================
+     CONTACT + REACTION
+========================= -->
+
+
+<section id="contact" class="contact-section">
+
+
+<h2 class="contact-title">
+Kết nối với mình nhé!
+</h2>
+
+
+<p class="contact-desc">
+Dù là trao đổi về công việc, dự án hay đơn giản là kết bạn làm quen!
+</p>
+
+
+
+<div class="contact-grid">
+
+
+
+<!-- CARD ZALO -->
+
+<div class="contact-card">
+
+<div class="icon">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+class="zalo-icon">
+</div>
+
+
+<h3>
+0985717534
+</h3>
+
+
+<p>
+Liên hệ nhanh qua điện thoại hoặc Zalo cá nhân.
+</p>
+
+
+<div class="buttons">
+
+<a href="http://zalo.me/0985717534" class="btn blue" target="_blank">
+Zalo Chat
+</a>
+
+<a href="tel:0985717534" class="btn" >
+Gọi trực tiếp
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- CARD EMAIL -->
+
+<div class="contact-card">
+
+
+<div class="icon green">
+✉
+</div>
+
+
+<h3>
+chitrungg09@gmail.com
+</h3>
+
+
+<p>
+Hòm thư cho các đề xuất công việc, dự án.
+</p>
+
+
+<div class="buttons">
+
+<a href="mailto:chitrungg09@gmail.com"
+class="btn dark">
+
+Gửi thư
+
+</a>
+
+<button onclick="copyMail()" class="btn">
+
+Sao chép
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- CARD SOCIAL -->
+
+<div class="contact-card">
+<head>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<div class="social-icons">
+   <div class="icon pink">
+      <link rel="stylesheet"
+      <i class="fa-brands fa-instagram"></i>
+
+   </div>
+   <div class="icon black">
+       <link rel="stylesheet"
+       <i class="fa-brands fa-tiktok"></i>
+   </div>
+
+   <div class="icon blue">
+       <link rel="stylesheet"
+       <i class="fa-brands fa-facebook"></i>
+</div>
+
+</div>
+
+
+
+
+<h3>
+Mạng xã hội
+</h3>
+
+
+<p>
+Theo dõi Instagram, TikTok và cuộc sống của mình.
+</p>
+
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/xi.trum_09/" class="btn pink-btn" target="_blank">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@trungp09?_r=1&_t=ZS-9A4NlOs08Dl" class="btn" target="_blank">
+TikTok
+</a>
+
+<a href="https://www.facebook.com/trung.phan.241356" class="btn" target="_blank">
+    Facebook
+</a>
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- REACTION -->
+
+
+<div class="reaction-box">
+
+
+<div class="reaction-top">
+
+<h2>
+✨ Thả tim & Cảm nhận về góc nhỏ của mình
+</h2>
+
+
+<p>
+<span id="total">
+0
+</span>
+ lượt tương tác
+</p>
+
+
+</div>
+
+
+
+
+<div class="reaction-list">
+
+
+<button onclick="react('love')">
+
+❤️ Yêu thích
+
+<span id="love">
+0
+</span>
+
+</button>
+
+
+
+<button onclick="react('energy')">
+
+🔥 Năng lượng
+
+<span id="energy">
+0
+</span>
+
+</button>
+
+
+
+
+<button onclick="react('inspire')">
+
+🚀 Truyền cảm hứng
+
+<span id="inspire">
+0
+</span>
+
+</button>
+
+
+
+
+<button onclick="react('calm')">
+
+🔮 Thư thái
+
+<span id="calm">
+0
+</span>
+
+</button>
+
+
+
+<button onclick="react('creative')">
+
+✨ Sáng tạo
+
+<span id="creative">
+0
+</span>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<style>
+
+
+.contact-section{
+
+    margin-top:160px;
+    padding-top:40px;
+
+}
+
+
+
+.contact-title{
+
+font-size:50px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.contact-desc{
+
+color:#64748b;
+
+font-size:18px;
+
+margin-bottom:40px;
+
+}
+
+
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+.contact-card{
+
+background:white;
+
+border:1px solid #e2e8f0;
+
+border-radius:25px;
+
+padding:30px;
+
+transition:.3s;
+
+}
+
+
+
+.contact-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px #0001;
+
+}
+
+
+
+.icon{
+
+width:50px;
+
+height:50px;
+
+border-radius:15px;
+
+background:#dbeafe;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+margin-bottom:25px;
+
+}
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+.social-icons .icon{
+
+    margin-bottom:10;
+
+}
+
+
+.green{
+
+background:#dcfce7;
+
+}
+
+
+
+.pink{
+
+background:#fce7f3;
+
+}
+
+
+
+.contact-card h3{
+
+font-size:23px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.contact-card p{
+
+color:#64748b;
+
+line-height:1.6;
+
+}
+
+
+
+.buttons{
+
+display:flex;
+
+gap:10px;
+
+margin-top:30px;
+
+}
+
+
+
+.btn{
+
+padding:12px 18px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+text-decoration:none;
+
+background:white;
+
+color:#111;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.blue{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+.pink-btn{
+
+background:#ec4899;
+
+color:white;
+
+}
+
+
+
+
+
+.reaction-box{
+
+margin-top:50px;
+
+background:white;
+
+border:1px solid #e2e8f0;
+
+border-radius:30px;
+
+padding:35px;
+
+}
+
+
+
+.reaction-top{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:30px;
+
+}
+
+
+
+.reaction-top p{
+
+color:#64748b;
+
+}
+
+
+
+.reaction-list{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.reaction-list button{
+
+padding:10px 18px;
+
+border-radius:40px;
+
+border:1px solid #ddd;
+
+background:white;
+
+font-size:14px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.reaction-list span{
+
+background:#f1f5f9;
+
+padding:5px 10px;
+
+border-radius:10px;
+
+}
+
+
+
+@media(max-width:700px){
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-title{
+
+font-size:38px;
+
+}
+
+}
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+let data =
+JSON.parse(localStorage.getItem("reaction"))
+||
+{
+love:0,
+energy:0,
+inspire:0,
+calm:0,
+creative:0
+};
+
+
+
+function updateReaction(){
+
+
+let total=0;
+
+
+for(let x in data){
+
+
+document.getElementById(x).innerHTML=data[x];
+
+
+total+=data[x];
+
+
+}
+
+
+document.getElementById("total").innerHTML=total;
+
+
+}
+
+
+
+function react(type){
+
+
+data[type]++;
+
+
+localStorage.setItem(
+"reaction",
+JSON.stringify(data)
+);
+
+
+updateReaction();
+
+
+}
+
+
+
+function copyMail(){
+
+navigator.clipboard.writeText(
+"chitrungg09@gmail.com"
+);
+
+alert("Đã sao chép email");
+
+}
+
+
+
+updateReaction();
+
+
+</script>
 
 
 </main>
 
 
 
-<!-- FOOTER -->
 
 <footer>
 
-    <span>
-        © 2026 Your Name
-    </span>
-
-    <span>
-        Made with HTML & CSS
-    </span>
+© 2026 Phan Như Chí Trung | Personal Portfolio
 
 </footer>
 

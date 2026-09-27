@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <!-- =========================
+         HTML - CẤU HÌNH WEBSITE
+    ========================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Liên hệ | Nguyễn Văn A</title>
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <style>
+
+        /* =====================================
+           RESET CSS
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================
+           BODY
+        ===================================== */
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #f7f7f5;
+
+            color: #111;
+
+            padding: 40px;
+
+        }
+
+
+        /* =====================================
+           CONTAINER
+        ===================================== */
+
+        .container {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .section-number {
+
+            color: #8b94a5;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .header h1 {
+
+            font-size: 48px;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .header p {
+
+            color: #9299a7;
+
+            font-size: 17px;
+
+        }
+
+
+        /* =====================================
+           NÚT LƯU DANH BẠ
+        ===================================== */
+
+        .save-contact {
+
+            text-decoration: none;
+
+            color: #111;
+
+            background: white;
+
+            border: 1px solid #ddd;
+
+            padding: 16px 22px;
+
+            border-radius: 18px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.05);
+
+            transition: 0.3s;
+
+        }
+
+
+        .save-contact:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.1);
+
+        }
+
+
+        /* =====================================
+           3 CARD
+        ===================================== */
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .contact-card {
+
+            background: white;
+
+            border: 1px solid #dedede;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            min-height: 260px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .contact-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.08);
+
+        }
+
+
+        /* =====================================
+           CARD TOP
+        ===================================== */
+
+        .card-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .card-label {
+
+            color: #999;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================
+           ICON
+        ===================================== */
+
+        .icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 21px;
+
+        }
+
+
+        .phone-icon {
+
+            background: #e7efff;
+
+            color: #1769ff;
+
+        }
+
+
+        .email-icon {
+
+            background: #e2f7ee;
+
+            color: #00a86b;
+
+        }
+
+
+        .social-icon {
+
+            background: linear-gradient(
+                135deg,
+                #ff315f,
+                #9c27ff
+            );
+
+            color: white;
+
+        }
+
+
+        /* =====================================
+           CARD CONTENT
+        ===================================== */
+
+        .contact-card h2 {
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .contact-card p {
+
+            color: #9098a7;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            min-height: 45px;
+
+        }
+
+
+        /* =====================================
+           BUTTON AREA
+        ===================================== */
+
+        .card-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 25px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #eee;
+
+        }
+
+
+        /* =====================================
+           BUTTON
+        ===================================== */
+
+        .button {
+
+            flex: 1;
+
+            min-height: 42px;
+
+            padding: 10px;
+
+            border-radius: 12px;
+
+            border: 1px solid #ddd;
+
+            background: white;
+
+            color: #222;
+
+            text-decoration: none;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .button:hover {
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =====================================
+           NÚT ZALO
+        ===================================== */
+
+        .zalo {
+
+            background: #1769ff;
+
+            color: white;
+
+            border-color: #1769ff;
+
+        }
+
+
+        /* =====================================
+           NÚT EMAIL
+        ===================================== */
+
+        .dark {
+
+            background: #111;
+
+            color: white;
+
+            border-color: #111;
+
+        }
+
+
+        /* =====================================
+           INSTAGRAM
+        ===================================== */
+
+        .instagram {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff315f,
+                    #9b2cff
+                );
+
+            color: white;
+
+            border: none;
+
+        }
+
+
+        /* =====================================
+           REACTION BOX
+        ===================================== */
+
+        .reaction-box {
+
+            background: white;
+
+            border: 1px solid #dedede;
+
+            border-radius: 25px;
+
+            margin-top: 40px;
+
+            padding: 35px 30px;
+
+        }
+
+
+        /* =====================================
+           REACTION HEADER
+        ===================================== */
+
+        .reaction-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .reaction-label {
+
+            display: inline-block;
+
+            color: #f39b00;
+
+            border: 1px solid #ffc94d;
+
+            padding: 5px 10px;
+
+            border-radius: 6px;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .reaction-header h2 {
+
+            margin-top: 12px;
+
+            font-size: 22px;
+
+        }
+
+
+        .total {
+
+            color: #8b95a7;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================
+           REACTION BUTTONS
+        ===================================== */
+
+        .reactions {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .reaction {
+
+            border: 1px solid #ddd;
+
+            background: white;
+
+            padding: 12px 18px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .reaction:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.08);
+
+        }
+
+
+        .reaction span {
+
+            background: #f1f1f5;
+
+            padding: 3px 7px;
+
+            border-radius: 6px;
+
+            margin-left: 5px;
+
+        }
+
+
+        /* =====================================
+           RESPONSIVE - ĐIỆN THOẠI
+        ===================================== */
+
+        @media (max-width: 850px) {
+
+            body {
+
+                padding: 20px;
+
+            }
+
+
+            .header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 25px;
+
+            }
+
+
+            .header h1 {
+
+                font-size: 38px;
+
+            }
+
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .reaction-header {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HTML - NỘI DUNG WEBSITE
+    ====================================== -->
+
+    <main class="container">
+
+
+        <!-- ================================
+             HEADER
+        ================================= -->
+
+        <div class="header">
+
+            <div>
+
+                <div class="section-number">
+
+                    06 / LIÊN HỆ & KẾT BẠN
+
+                </div>
+
+
+                <h1>
+
+                    Kết nối với mình nhé!
+
+                </h1>
+
+
+                <p>
+
+                    Dù là trao đổi về công việc,
+                    dự án hay đơn giản là kết bạn làm quen!
+
+                </p>
+
+            </div>
+
+
+            <!--
+                Nút này có thể dẫn tới file
+                danh bạ .vcf của bạn
+            -->
+
+            <a
+                href="contact.vcf"
+                download
+                class="save-contact"
+            >
+
+                ↓ &nbsp; Lưu danh bạ (.vcf)
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ================================
+             3 CARD LIÊN HỆ
+        ================================= -->
+
+        <div class="contact-grid">
+
+
+            <!-- =================================
+                 CARD 1 - PHONE / ZALO
+            ================================== -->
+
+            <div class="contact-card">
+
+
+                <div class="card-top">
+
+                    <div class="icon phone-icon">
+
+                        ☎
+
+                    </div>
+
+
+                    <div class="card-label">
+
+                        HOTLINE / ZALO
+
+                    </div>
+
+                </div>
+
+
+                <h2>
+
+                    0123456789
+
+                </h2>
+
+
+                <p>
+
+                    Liên hệ nhanh qua điện thoại
+                    hoặc Zalo cá nhân.
+
+                </p>
+
+
+                <div class="card-buttons">
+
+
+                    <!--
+                        href="tel:..."
+                        dùng để gọi điện
+                    -->
+
+                    <a
+                        href="tel:0123456789"
+                        class="button"
+                    >
+
+                        Gọi trực tiếp
+
+                    </a>
+
+
+                    <!--
+                        href="https://zalo.me/..."
+                        mở Zalo
+                    -->
+
+                    <a
+                        href="https://zalo.me/0123456789"
+                        target="_blank"
+                        class="button zalo"
+                    >
+
+                        Zalo Chat
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CARD 2 - EMAIL
+            ================================== -->
+
+            <div class="contact-card">
+
+
+                <div class="card-top">
+
+                    <div class="icon email-icon">
+
+                        ✉
+
+                    </div>
+
+
+                    <div class="card-label">
+
+                        EMAIL
+
+                    </div>
+
+                </div>
+
+
+                <h2>
+
+                    yourmail@gmail.com
+
+                </h2>
+
+
+                <p>
+
+                    Hòm thư cho các đề xuất
+                    công việc, dự án.
+
+                </p>
+
+
+                <div class="card-buttons">
+
+
+                    <!--
+                        Bấm vào sẽ chạy JavaScript
+                        để copy email
+                    -->
+
+                    <button
+                        class="button"
+                        onclick="copyEmail()"
+                    >
+
+                        Sao chép
+
+                    </button>
+
+
+                    <!--
+                        mailto:
+                        mở ứng dụng email
+                    -->
+
+                    <a
+                        href="mailto:yourmail@gmail.com"
+                        class="button dark"
+                    >
+
+                        Gửi thư
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CARD 3 - SOCIAL
+            ================================== -->
+
+            <div class="contact-card">
+
+
+                <div class="card-top">
+
+                    <div class="icon social-icon">
+
+                        ◎
+
+                    </div>
+
+
+                    <div class="card-label">
+
+                        MẠNG XÃ HỘI
+
+                    </div>
+
+                </div>
+
+
+                <h2>
+
+                    @yourusername
+
+                </h2>
+
+
+                <p>
+
+                    Theo dõi Instagram, hình ảnh
+                    cuộc sống và video TikTok.
+
+                </p>
+
+
+                <div class="card-buttons">
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="https://www.instagram.com/yourusername/"
+                        target="_blank"
+                        class="button instagram"
+                    >
+
+                        Instagram
+
+                    </a>
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@yourusername"
+                        target="_blank"
+                        class="button"
+                    >
+
+                        TikTok
+
+                    </a>
+
+
+                    <!-- FACEBOOK -->
+
+                    <a
+                        href="https://www.facebook.com/yourusername"
+                        target="_blank"
+                        class="button"
+                    >
+
+                        Facebook
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================================
+             REACTION
+        ================================= -->
+
+        <div class="reaction-box">
+
+
+            <div class="reaction-header">
+
+
+                <div>
+
+                    <span class="reaction-label">
+
+                        TƯƠNG TÁC TRÊN ✨
+
+                    </span>
+
+
+                    <h2>
+
+                        Thả tim & Cảm nhận
+                        về góc nhỏ của mình:
+
+                    </h2>
+
+                </div>
+
+
+                <div class="total">
+
+                    <span id="total">
+
+                        78
+
+                    </span>
+
+                    lượt thả tim & tương tác
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==============================
+                 REACTION BUTTONS
+            =============================== -->
+
+            <div class="reactions">
+
+
+                <button
+                    class="reaction"
+                    onclick="react('love')"
+                >
+
+                    ❤️ Yêu thích
+
+                    <span id="love">
+
+                        44
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="reaction"
+                    onclick="react('energy')"
+                >
+
+                    🔥 Năng lượng
+
+                    <span id="energy">
+
+                        17
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="reaction"
+                    onclick="react('inspire')"
+                >
+
+                    🚀 Truyền cảm hứng
+
+                    <span id="inspire">
+
+                        6
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="reaction"
+                    onclick="react('calm')"
+                >
+
+                    🔮 Thư thái
+
+                    <span id="calm">
+
+                        7
+
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="reaction"
+                    onclick="react('creative')"
+                >
+
+                    ✨ Sáng tạo
+
+                    <span id="creative">
+
+                        4
+
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* =================================
+           COPY EMAIL
+        ================================== */
+
+        function copyEmail() {
+
+
+            // Email của bạn
+
+            const email =
+                "yourmail@gmail.com";
+
+
+            // Copy email vào clipboard
+
+            navigator.clipboard.writeText(email);
+
+
+            // Thông báo
+
+            alert(
+                "Đã sao chép email: "
+                + email
+            );
+
+        }
+
+
+
+        /* =================================
+           REACTION
+        ================================== */
+
+        function react(type) {
+
+
+            /*
+                Tìm phần tử có id tương ứng.
+
+                Ví dụ:
+
+                react("love")
+
+                sẽ tìm:
+
+                id="love"
+            */
+
+            const element =
+                document.getElementById(type);
+
+
+            /*
+                Lấy số hiện tại
+            */
+
+            let number =
+                parseInt(
+                    element.innerText
+                );
+
+
+            /*
+                Tăng thêm 1
+            */
+
+            number++;
+
+
+            /*
+                Hiển thị số mới
+            */
+
+            element.innerText =
+                number;
+
+
+            /*
+                Tăng tổng số tương tác
+            */
+
+            const total =
+                document.getElementById("total");
+
+
+            let totalNumber =
+                parseInt(
+                    total.innerText
+                );
+
+
+            totalNumber++;
+
+
+            total.innerText =
+                totalNumber;
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
