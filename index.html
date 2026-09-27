@@ -543,6 +543,14 @@ Học tập
 Kỹ năng
 </a>
 
+<a href="#hobby">
+    Sở thích
+</a>
+
+<a href="#contact">
+    Liên hệ
+</a>
+
 </div>
 
 </nav>
@@ -553,7 +561,7 @@ Kỹ năng
 <main class="container">
 
 
-<section class="hero">
+<section id="about" class="hero">
 
 
 <div class="avatar">
@@ -597,12 +605,12 @@ Mình đang học thêm về công nghệ thông tin, giao lưu, học hỏi và
 
 <div class="buttons">
 
-<a class="btn primary" href="#">
+<a class="btn primary" href="#contact">
 Liên hệ mình
 </a>
 
 
-<a class="btn secondary" href="#">
+<a class="btn secondary" href="#study">
 Xem hành trình
 </a>
 
@@ -841,7 +849,7 @@ Tiếng Anh
 
 
 
-<section class="section">
+<section id="hobby" class="section">
 
 
 <h2 class="title">
@@ -882,7 +890,675 @@ Sở thích
 
 </section>
 
+<!-- =========================
+     CONTACT + REACTION
+========================= -->
 
+
+<section id="contact" class="contact-section">
+
+
+<h2 class="contact-title">
+Kết nối với mình nhé!
+</h2>
+
+
+<p class="contact-desc">
+Dù là trao đổi về công việc, dự án hay đơn giản là kết bạn làm quen!
+</p>
+
+
+
+<div class="contact-grid">
+
+
+
+<!-- CARD ZALO -->
+
+<div class="contact-card">
+
+<div class="icon">
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+class="zalo-icon">
+</div>
+
+
+<h3>
+0985717534
+</h3>
+
+
+<p>
+Liên hệ nhanh qua điện thoại hoặc Zalo cá nhân.
+</p>
+
+
+<div class="buttons">
+
+<a href="http://zalo.me/0985717534" class="btn blue" target="_blank">
+Zalo Chat
+</a>
+
+<a href="tel:0985717534" class="btn" >
+Gọi trực tiếp
+</a>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- CARD EMAIL -->
+
+<div class="contact-card">
+
+
+<div class="icon green">
+✉
+</div>
+
+
+<h3>
+chitrungg09@gmail.com
+</h3>
+
+
+<p>
+Hòm thư cho các đề xuất công việc, dự án.
+</p>
+
+
+<div class="buttons">
+
+<a href="mailto:chitrungg09@gmail.com"
+class="btn dark">
+
+Gửi thư
+
+</a>
+
+<button onclick="copyMail()" class="btn">
+
+Sao chép
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- CARD SOCIAL -->
+
+<div class="contact-card">
+<head>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<div class="social-icons">
+   <div class="icon pink">
+      <link rel="stylesheet"
+      <i class="fa-brands fa-instagram"></i>
+
+   </div>
+   <div class="icon black">
+       <link rel="stylesheet"
+       <i class="fa-brands fa-tiktok"></i>
+   </div>
+
+   <div class="icon blue">
+       <link rel="stylesheet"
+       <i class="fa-brands fa-facebook"></i>
+</div>
+
+</div>
+
+
+
+
+<h3>
+Mạng xã hội
+</h3>
+
+
+<p>
+Theo dõi Instagram, TikTok và cuộc sống của mình.
+</p>
+
+
+<div class="buttons">
+
+<a href="https://www.instagram.com/xi.trum_09/" class="btn pink-btn" target="_blank">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@trungp09?_r=1&_t=ZS-9A4NlOs08Dl" class="btn" target="_blank">
+TikTok
+</a>
+
+<a href="https://www.facebook.com/trung.phan.241356" class="btn" target="_blank">
+    Facebook
+</a>
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- REACTION -->
+
+
+<div class="reaction-box">
+
+
+<div class="reaction-top">
+
+<h2>
+✨ Thả tim & Cảm nhận về góc nhỏ của mình
+</h2>
+
+
+<p>
+<span id="total">
+0
+</span>
+ lượt tương tác
+</p>
+
+
+</div>
+
+
+
+
+<div class="reaction-list">
+
+
+<button onclick="react('love')">
+
+❤️ Yêu thích
+
+<span id="love">
+0
+</span>
+
+</button>
+
+
+
+<button onclick="react('energy')">
+
+🔥 Năng lượng
+
+<span id="energy">
+0
+</span>
+
+</button>
+
+
+
+
+<button onclick="react('inspire')">
+
+🚀 Truyền cảm hứng
+
+<span id="inspire">
+0
+</span>
+
+</button>
+
+
+
+
+<button onclick="react('calm')">
+
+🔮 Thư thái
+
+<span id="calm">
+0
+</span>
+
+</button>
+
+
+
+<button onclick="react('creative')">
+
+✨ Sáng tạo
+
+<span id="creative">
+0
+</span>
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<style>
+
+
+.contact-section{
+
+    margin-top:160px;
+    padding-top:40px;
+
+}
+
+
+
+.contact-title{
+
+font-size:50px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.contact-desc{
+
+color:#64748b;
+
+font-size:18px;
+
+margin-bottom:40px;
+
+}
+
+
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+.contact-card{
+
+background:white;
+
+border:1px solid #e2e8f0;
+
+border-radius:25px;
+
+padding:30px;
+
+transition:.3s;
+
+}
+
+
+
+.contact-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px #0001;
+
+}
+
+
+
+.icon{
+
+width:50px;
+
+height:50px;
+
+border-radius:15px;
+
+background:#dbeafe;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+margin-bottom:25px;
+
+}
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+.social-icons .icon{
+
+    margin-bottom:10;
+
+}
+
+
+.green{
+
+background:#dcfce7;
+
+}
+
+
+
+.pink{
+
+background:#fce7f3;
+
+}
+
+
+
+.contact-card h3{
+
+font-size:23px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.contact-card p{
+
+color:#64748b;
+
+line-height:1.6;
+
+}
+
+
+
+.buttons{
+
+display:flex;
+
+gap:10px;
+
+margin-top:30px;
+
+}
+
+
+
+.btn{
+
+padding:12px 18px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+text-decoration:none;
+
+background:white;
+
+color:#111;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.blue{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+
+
+.dark{
+
+background:#111;
+
+color:white;
+
+}
+
+
+
+.pink-btn{
+
+background:#ec4899;
+
+color:white;
+
+}
+
+
+
+
+
+.reaction-box{
+
+margin-top:50px;
+
+background:white;
+
+border:1px solid #e2e8f0;
+
+border-radius:30px;
+
+padding:35px;
+
+}
+
+
+
+.reaction-top{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:30px;
+
+}
+
+
+
+.reaction-top p{
+
+color:#64748b;
+
+}
+
+
+
+.reaction-list{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.reaction-list button{
+
+padding:10px 18px;
+
+border-radius:40px;
+
+border:1px solid #ddd;
+
+background:white;
+
+font-size:14px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.reaction-list span{
+
+background:#f1f5f9;
+
+padding:5px 10px;
+
+border-radius:10px;
+
+}
+
+
+
+@media(max-width:700px){
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-title{
+
+font-size:38px;
+
+}
+
+}
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+let data =
+JSON.parse(localStorage.getItem("reaction"))
+||
+{
+love:0,
+energy:0,
+inspire:0,
+calm:0,
+creative:0
+};
+
+
+
+function updateReaction(){
+
+
+let total=0;
+
+
+for(let x in data){
+
+
+document.getElementById(x).innerHTML=data[x];
+
+
+total+=data[x];
+
+
+}
+
+
+document.getElementById("total").innerHTML=total;
+
+
+}
+
+
+
+function react(type){
+
+
+data[type]++;
+
+
+localStorage.setItem(
+"reaction",
+JSON.stringify(data)
+);
+
+
+updateReaction();
+
+
+}
+
+
+
+function copyMail(){
+
+navigator.clipboard.writeText(
+"chitrungg09@gmail.com"
+);
+
+alert("Đã sao chép email");
+
+}
+
+
+
+updateReaction();
+
+
+</script>
 
 
 </main>
